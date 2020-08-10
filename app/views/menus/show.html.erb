@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @menu.name %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @menu.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @menu.end_date %>
+</p>
+
+<p>
+  <strong>Dish:</strong>
+  <%= @menu.dishes.count %>
+</p>
+
+<p>
+  <strong>Potrawy:</strong>
+  <% @menu.dishes.each do |p| %>
+    <%= p.name %>
+  <% end %>
+  <%= @menu.dishes.count %>
+</p>
+
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>
