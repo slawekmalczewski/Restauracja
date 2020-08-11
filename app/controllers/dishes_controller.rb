@@ -3,8 +3,10 @@ class DishesController < ApplicationController
 
   # GET /dishes
   # GET /dishes.json
+  helper_method :sort_column, :sort_direction
+
   def index
-    @dishes = Dish.all
+    @dishes = Dish.order(sort_column + ' ' + sort_direction)
   end
 
   # GET /dishes/1
@@ -67,8 +69,16 @@ class DishesController < ApplicationController
       @dish = Dish.find(params[:id])
     end
 
+    def sort_column
+      Dish.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
+
     # Only allow a list of trusted parameters through.
     def dish_params
-      params.require(:dish).permit(:name, :description, :weight, :weight_unit, :price)
+      params.require(:dish).permit(:name, :description, :weight, :weight_unit, :price, :dish_type)
     end
 end

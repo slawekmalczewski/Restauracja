@@ -36,6 +36,11 @@
     <%= form.text_field :price %>
   </div>
 
+  <div class="field">
+    <%= form.label :dish_type %>
+    <%= form.select :dish_type, ['Danie Glowne', 'Zupa', 'Dodatek', 'Danie na zimno', 'Napoje'] %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
