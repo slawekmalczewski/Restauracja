@@ -5,4 +5,6 @@ class Dish < ApplicationRecord
   def extended_info_for_check_boxes
     "#{ name } (#{weight}#{weight_unit}) - #{ price } zl / #{updated_at}"
   end
+
+
 end

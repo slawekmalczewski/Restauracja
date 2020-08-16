@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_11_213202) do
+ActiveRecord::Schema.define(version: 2020_08_14_231621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_08_11_213202) do
     t.integer "dish_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "default_menu"
   end
 
 end
