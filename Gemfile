@@ -39,6 +39,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # My Ruby rubygems
 gem 'bootstrap', '~> 4.5.2'
 gem 'jquery-rails'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+gem 'momentjs-rails', '~> 2.17', '>= 2.17.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

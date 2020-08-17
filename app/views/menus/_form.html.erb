@@ -1,54 +1,112 @@
-<%= form_with(model: menu, local: true) do |form| %>
-  <% if menu.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+<div class="container-fluid">
+  <%= form_with(model: menu, local: true) do |form| %>
+    <% if menu.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
 
-      <ul>
-      <% menu.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% menu.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <div class="row">
+    <div class="col">
+      <div class="control-group">
+        <%= form.label :name, class: "control-label" %>
+        <div class="controls">
+          <%= form.text_field :name %>
+        </div>
+      </div>
     </div>
-  <% end %>
+    <div class="col">
+      <div class="control-group">
+        <%= form.label :default_menu, class: "control-label" %>
+        <div class="controls">
+          <%= form.check_box :default_menu,:class => "check" %>
+        </div>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <div class="col">
+      <div class="control-group">
+        <%= form.label :catering_menu, class: "control-label" %>
+        <div class="controls">
+          <%= form.check_box :catering_menu,:class => "check" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="control-group">
+        <%= form.label :temporary_menu, class: "control-label" %>
+        <div class="controls">
+          <%= form.check_box :temporary_menu,:class => "check", :onclick => "document.getElementById('showonchecked').style.display = (this.checked ? 'inline' : 'none');" %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<hr class="style2">
+<div class="row">
+  <div class="col">
+    <div class="control-group">
+      <%= form.label "Wybierz Potrawy", class: "control-label" %><br />
+      <div class="controls">
+        <%= form.collection_check_boxes :dish_ids, Dish.all, :id, :extended_info_for_check_boxes do |b| %>
+        <div class="collection-check-box">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="style2">
+<div class="row">
+  <div id="showonchecked" style="display:none">
+    <div class="col">
+      <div class="control-group">
+        <%= form.label :start_date, class: "control-label" %>
+        <div class="controls">
+          <%= form.datetime_select :start_date %>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="control-group">
+        <%= form.label :end_date, class: "control-label" %>
+        <div class="controls">
+          <%= form.datetime_select :end_date %>
+        </div>
+      </div>
+    </div>
+      <hr class="style2">
   </div>
 
-  <div class="field">
-  <%= form.label "Potrawy" %><br />
-  <%= form.collection_check_boxes :dish_ids, Dish.all, :id, :extended_info_for_check_boxes do |b| %>
-    <div class="collection-check-box">
-      <%= b.check_box %>
-      <%= b.label %>
-    </div>
-  <% end %>
 </div>
 
 
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.datetime_select :start_date %>
+<div class="row">
+  <div class="col">
+    <div class="controls">
+      <%= form.submit :class => 'btn btn-primary' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.datetime_select :end_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :default_menu %>
-    <%= form.check_box :default_menu %>
-  </div>
+</div>
 
 
+  <% end %>
+</div>
 
-
-
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<!-- this script will allow only one checkbox to be selected -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.check').click(function() {
+        $('.check').not(this).prop('checked', false);
+    });
+});
+</script>
