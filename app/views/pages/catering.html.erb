@@ -1,0 +1,93 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+
+  <%= link_to 'Edit', edit_menu_path(@menu) %> |
+  <%= link_to 'Back', menus_path %>
+
+  <div class="container py-5">
+      <div class="row">
+          <div class="col-lg-10 mx-auto col-12 text-center mb-3">
+              <h1 class="mt-0 text-primary"><%= @menu.name %></h1>
+                Liczba dan w zestawie: <%= @menu.dishes.count %></p>
+          </div>
+
+          <!-- Zupy -->
+          <div class="col-12 mt-4">
+              <h3 class="text-center">Zupy</h3>
+              <hr class="accent my-5">
+          </div>
+          <div class="card-columns">
+            <% @menu.dishes.where(:dish_type => "Zupa").each do |p| %>
+              <div class="card card-body">
+                  <span class="float-right font-weight-bold"><%= p.price %></span>
+                  <h6 class="text-truncate"><%= p.name %> <span class="weight_and_unit"> (<%= p.weight %> <%= p.weight_unit %>) </span></h6>
+                  <p class="small"><%= p.description %></p>
+              </div>
+            <% end %>
+          </div>
+
+          <!-- Dania Glowne -->
+          <div class="col-12 mt-4">
+              <h3 class="text-center">Dania Glowne</h3>
+              <hr class="accent my-5">
+          </div>
+          <div class="card-columns">
+            <% @menu.dishes.where(:dish_type => "Danie Glowne").each do |p| %>
+              <div class="card card-body">
+                  <span class="float-right font-weight-bold"><%= p.price %></span>
+                  <h6 class="text-truncate"><%= p.name %> <span class="weight_and_unit"> (<%= p.weight %> <%= p.weight_unit %>) </span></h6>
+                  <p class="small"><%= p.description %></p>
+              </div>
+            <% end %>
+          </div>
+
+          <!-- Dania na zimno -->
+          <div class="col-12 mt-4">
+              <h3 class="text-center">Dania na zimno</h3>
+              <hr class="accent my-5">
+          </div>
+          <div class="card-columns">
+            <% @menu.dishes.where(:dish_type => "Danie na zimno").each do |p| %>
+              <div class="card card-body">
+                  <span class="float-right font-weight-bold"><%= p.price %></span>
+                  <h6 class="text-truncate"><%= p.name %> <span class="weight_and_unit"> (<%= p.weight %> <%= p.weight_unit %>) </span></h6>
+                  <p class="small"><%= p.description %></p>
+              </div>
+            <% end %>
+          </div>
+
+          <!-- Dodatki -->
+          <div class="col-12 mt-4">
+              <h3 class="text-center">Dodatki</h3>
+              <hr class="accent my-5">
+          </div>
+          <div class="card-columns">
+            <% @menu.dishes.where(:dish_type => "Dodatek").each do |p| %>
+              <div class="card card-body">
+                  <span class="float-right font-weight-bold"><%= p.price %></span>
+                  <h6 class="text-truncate"><%= p.name %> <span class="weight_and_unit"> (<%= p.weight %> <%= p.weight_unit %>) </span></h6>
+                  <p class="small"><%= p.description %></p>
+              </div>
+            <% end %>
+          </div>
+
+          <!-- Napoje -->
+          <div class="col-12 mt-4">
+              <h3 class="text-center">Napoje</h3>
+              <hr class="accent my-5">
+          </div>
+          <div class="card-columns">
+            <% @menu.dishes.where(:dish_type => "Napoje").each do |p| %>
+              <div class="card card-body">
+                  <span class="float-right font-weight-bold"><%= p.price %></span>
+                  <h6 class="text-truncate"><%= p.name %> <span class="weight_and_unit"> (<%= p.weight %> <%= p.weight_unit %>) </span></h6>
+                  <p class="small"><%= p.description %></p>
+              </div>
+            <% end %>
+          </div>
+
+      </div>
+  </div>
+
+</div>

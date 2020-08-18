@@ -26,6 +26,7 @@
           <tr>
             <th scope="col">Nazwa</th>
             <th scope="col">Typ Menu</th>
+            <th scope="col">Data Utworzenia</th>
             <th scope="col">Opcje</th>
           </tr>
         </thead>
@@ -33,7 +34,16 @@
           <% @menus.each do |menu| %>
           <tr>
             <td class="col-md-3"><%= menu.name %></td>
-            <td class="col-md-3"><%= menu.default_menu %> <%= menu.catering_menu %> <%= menu.temporary_menu %></td>
+            <td class="col-md-3">
+              <% if menu.default_menu == true %>
+              <%= "Menu Domyslne"%>
+              <% elsif menu.catering_menu == true %>
+              <%= "Catering" %>
+              <% else %>
+              <%= "Menu Tymczasowe" %><br/><span class="small"> <%= convert_time_to_readable(menu.start_date) %> -> <%= convert_time_to_readable(menu.end_date) %></span>
+              <% end %>
+            </td>
+            <td class="col-md-3"><%= convert_time_to_readable(menu.updated_at) %></td>
             <td class="col-md-1"><%= link_to 'Pokaz', menu %></td>
             <td class="col-md-1"><%= link_to 'Edytuj', edit_menu_path(menu) %></td>
             <td class="col-md-1"><%= link_to 'Usun', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
