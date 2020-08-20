@@ -1,0 +1,14 @@
+<div class="d-flex" id="wrapper">
+
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper" data-turbolinks="false">
+    <div class="sidebar-heading"><%= link_to("Admin", {:controller => 'admins', :action => 'dashboard'}) %></div>
+    <div class="list-group list-group-flush">
+      <%= link_to("Zarzadaj Potrawami", {:controller => 'dishes', :action => 'index'}, :class => "list-group-item list-group-item-action bg-light") %>
+      <%= link_to("Zarzadaj Menu", {:controller => 'menus', :action => 'index'}, :class => "list-group-item list-group-item-action bg-light") %>
+      <%= link_to("Zarzadzaj Godzinami", {:controller => 'working_hours', :action => 'index'}, :class => "list-group-item list-group-item-action bg-light") %>
+
+      <%= link_to("Zarzadzaj Ogloszeniami", {:controller => 'blogs', :action => 'index'}, :class => "list-group-item list-group-item-action bg-light") %>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->

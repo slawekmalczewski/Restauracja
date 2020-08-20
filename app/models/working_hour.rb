@@ -1,5 +1,7 @@
 class WorkingHour < ApplicationRecord
 
+  scope :sort_by_day, -> { order(id: :asc)}
+
   def self.check_if_we_are_open
     what_day_is_today = Time.now.strftime("%A")
     if what_day_is_today == "Monday"
@@ -32,6 +34,5 @@ class WorkingHour < ApplicationRecord
     end
     answer
   end
-
 
 end

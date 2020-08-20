@@ -5,6 +5,8 @@ module ApplicationHelper
     z.strftime("%d %b, %Y at %H:%M")
   end
 
-
+  def display_only_hour(operating_time)
+    operating_time = operating_time .strftime("%H:%M")
+  end
 
 end

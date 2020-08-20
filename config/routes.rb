@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'admins', to: "admins#dashboard"
   resources :blogs
   resources :working_hours
   root "pages#home"

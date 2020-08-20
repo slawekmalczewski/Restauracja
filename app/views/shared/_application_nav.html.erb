@@ -16,6 +16,8 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Live Feeds</a>
       </li>
+      <li class="<%= 'nav-item active' if params[:controller] == 'admins' && params[:action] == 'dashboard' %>"><%= link_to("Admin", {:controller => 'admins', :action => 'dashboard'}, :class => "nav-link") %>
+      </li>
     </ul>
   </div>
 </nav>

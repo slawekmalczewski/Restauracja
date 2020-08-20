@@ -24,7 +24,7 @@
         <p><i class="fa fa-envelope-o mr-3"></i><a href="mailto:nadmotlawa@op.pl?subject=Zapytanie%20ze%20of%20strony%20internetowej">nadmotlawa@op.pl</a></p>
       </div>
       <div class="">
-        <% WorkingHour.all.each do |d| %>
+        <% WorkingHour.all.sort_by_day.each do |d| %>
           <% if d.operating == true %>
             <%= d.day %>  <%= "Nieczynne" %>
           <% else %>

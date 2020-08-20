@@ -4,7 +4,7 @@ class WorkingHoursController < ApplicationController
   # GET /working_hours
   # GET /working_hours.json
   def index
-    @working_hours = WorkingHour.all
+    @working_hours = WorkingHour.all.sort_by_day
   end
 
   # GET /working_hours/1
