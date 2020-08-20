@@ -5,12 +5,13 @@
     <div class="d-flex h-100 text-center align-items-center">
       <div class="w-100 text-white">
         <h1 class="display-3">Zapraszamy</h1>
-        <p class="lead mb-0">Restauracja "Nad Motlawa"</p>
+        <h3 class="display-5">Restauracja "Nad Motlawa"</h3>
+        <p class="lead mb-0"> <span class="small"><%= WorkingHour.check_if_we_are_open %></span></p>
       </div>
     </div>
   </div>
 </header>
-
+<br/>
 <!-- Call the slideshow -->
 <%= render 'shared/slideshow' %>
 

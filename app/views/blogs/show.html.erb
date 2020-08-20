@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @blog.body %>
+</p>
+
+<p>
+  <strong>Published:</strong>
+  <%= @blog.published %>
+</p>
+
+<p>
+  <strong>Valid from:</strong>
+  <%= @blog.valid_from %>
+</p>
+
+<p>
+  <strong>Valid to:</strong>
+  <%= @blog.valid_to %>
+</p>
+
+<p>
+  <strong>Main poster:</strong>
+  <%= @blog.main_poster %>
+</p>
+
+<p>
+  <strong>Thumb poster:</strong>
+  <%= @blog.thumb_poster %>
+</p>
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>

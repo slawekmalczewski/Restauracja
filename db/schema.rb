@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_17_221806) do
+ActiveRecord::Schema.define(version: 2020_08_19_215549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2020_08_17_221806) do
     t.boolean "default_menu"
     t.boolean "catering_menu"
     t.boolean "temporary_menu"
+  end
+
+  create_table "working_hours", force: :cascade do |t|
+    t.string "day"
+    t.time "open_time"
+    t.time "close_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "operating"
   end
 
 end

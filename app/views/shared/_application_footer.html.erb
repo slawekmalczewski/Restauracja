@@ -23,6 +23,18 @@
         <p class="mb-0"><i class="fa fa-phone mr-3"></i>058 6828615</p>
         <p><i class="fa fa-envelope-o mr-3"></i><a href="mailto:nadmotlawa@op.pl?subject=Zapytanie%20ze%20of%20strony%20internetowej">nadmotlawa@op.pl</a></p>
       </div>
+      <div class="">
+        <% WorkingHour.all.each do |d| %>
+          <% if d.operating == true %>
+            <%= d.day %>  <%= "Nieczynne" %>
+          <% else %>
+            <%= d.day %>  <%= display_only_hour(d.open_time) %> - <%= display_only_hour(d.close_time) %>
+          <% end %>
+        <% end %>
+
+      </div>
+
+
     </div>
     <div class="row mt-5">
       <div class="col copyright">

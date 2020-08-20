@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     render layout: 'public_index'
+
   end
 
   def about
@@ -18,7 +19,6 @@ class PagesController < ApplicationController
   def catering
     @menu = Menu.all.where(:catering_menu => true).order(created_at: :desc)[0]
   end
-
 
 
 end

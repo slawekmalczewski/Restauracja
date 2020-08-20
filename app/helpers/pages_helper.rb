@@ -6,4 +6,8 @@ module PagesHelper
     current_year - established_year
   end
 
+  def display_only_hour (operating_time)
+    operating_time = operating_time .strftime("%H:%M")
+  end
+
 end

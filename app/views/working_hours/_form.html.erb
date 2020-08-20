@@ -1,0 +1,37 @@
+<%= form_with(model: working_hour, local: true) do |form| %>
+  <% if working_hour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(working_hour.errors.count, "error") %> prohibited this working_hour from being saved:</h2>
+
+      <ul>
+      <% working_hour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.select :day, ['Poniedzialek', 'Wtorek', 'Sroda', 'Czwartek', 'Piatek', 'Sobota', 'Niedziela'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Godzina Otwarcia" %>
+    <%= form.time_select :open_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Godzina Zamkniecia" %>
+    <%= form.time_select :close_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Zamkniete ?" %>
+    <%= form.check_box :operating %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

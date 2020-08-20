@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :blogs
+  resources :working_hours
   root "pages#home"
   get 'home', to: "pages#home"
   get 'about', to: "pages#about"
