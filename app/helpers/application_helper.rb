@@ -9,4 +9,8 @@ module ApplicationHelper
     operating_time = operating_time .strftime("%H:%M")
   end
 
+  def short_text(text_to_cut)
+    shortened_text = truncate(text_to_cut, :length => 15, :omission => "ciag dalszy nastapi")
+  end
+
 end

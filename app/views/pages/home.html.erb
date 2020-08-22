@@ -4,14 +4,146 @@
   <div class="container h-100">
     <div class="d-flex h-100 text-center align-items-center">
       <div class="w-100 text-white">
-        <h1 class="display-3">Zapraszamy</h1>
-        <h3 class="display-5">Restauracja "Nad Motlawa"</h3>
+        <h1 class="display-2">Zapraszamy</h1>
+        <h2 class="display-5">Restauracja "Nad Motlawa"</h2>
         <p class="lead mb-0"> <span class="small"><%= WorkingHour.check_if_we_are_open %></span></p>
       </div>
     </div>
   </div>
 </header>
-<br/>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex justify-content-between align-items-center breaking-news bg-white">
+                <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 news"><span class="d-flex align-items-center">&nbsp;Aktualnosci</span></div>
+                <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+                  <% Blog.all.is_published.order_by_newest_ad.limit(3).each do |ad| %>
+                    <%= link_to ad.title, controller: "blogs", action: "show", id: ad.id %>
+                    <span class="dot"></span>
+                  <% end %>
+                </marquee>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<hr class="mystyle1">
+
+<!-- About Section Start -->
+ <section class="home-about-section">
+     <div class="container">
+         <div class="row">
+             <!-- About Section Content -->
+             <div class="col-md-6">
+                 <div class="home-about-content">
+                     <h2 class="home-section-title">Witamy <br />w Restauracji “Nad Motława” </h2>
+                     <p class="home-about-text">
+                       Każdy z nas marzy o ciepłym domowym obiadku, który zazwyczaj przygotowywała dla nas mama czy babcia.
+                       Domowe jedzenie stanowi przyjemność samą w sobie, pełną wartości odżywczych, smaczną i to bez chemicznych ulepszaczy smaku. Oczywiście nie ma mowy o tym, abyśmy sami postarali się i upichcili sobie coś podobnego. Dlaczego ?<br/>
+                       Bo to pracochłonne, a nam się zwyczajnie nie chce lub po prostu nie mamy wystarczjących umiejętności kulinarnych.
+                       Taki domowy posiłek, w bardzo przystępnej cenie, zjecie Państwo
+                       w naszej restauracji "Nad Motławą".</p>
+                     <p class="lead font-weight-bold">
+                       Serdecznie Zapraszamy
+                     </p>
+                     <br/>
+
+                     <table class="table table-sm table-striped">
+                       <thead>
+                         <tr>
+                           <th scope="col">Godziny Otwarcia</th>
+                         </tr>
+                       </thead>
+                       <tbody>
+                         <% WorkingHour.all.sort_by_day.each do |d| %>
+                         <tr>
+                           <td class="col-sm-6"><%= d.day %></td>
+                           <td class="col-sm-6">
+                              <% if d.operating == true %>
+                                <%= "Restauracja Nieczynna" %>
+                              <% else %>
+                                <%= display_only_hour(d.open_time) %> - <%= display_only_hour(d.close_time) %>
+                              <% end %>
+                           </td>
+                         </tr>
+                         <% end %>
+                       </tbody>
+                     </table>
+                     <div class="row">
+                       <div class="col">
+                         <p class="home-about-text"><i class="fa fa-phone"></i> &nbsp; 058 682-86-15</p>
+                       </div>
+                       <div class="col">
+                         <p class="home-about-text"><i class="fa fa-envelope"></i> &nbsp; nadmotlawa@op.pl</p>
+                       </div>
+                     </div>
+                 </div>
+             </div>
+             <!-- About Section Image-->
+             <div class="col-md-6">
+                 <div class="home-about-picture text-right">
+                     <%= image_tag("historia-#{rand(1..3)}.png", size: '500x300', :crop => :fill) %>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </section><!-- About Section End -->
+
+ <hr class="mystyle1">
+
+ <!-- Service Section Start -->
+  <section class="home-services">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 text-center">
+                  <h2 class="home-section-title">Nasze Uslugi</h2><br/>
+              </div>
+          </div>
+          <!-- Busniess Meeting Service -->
+          <div class="row">
+              <div class="col-md-4 text-center">
+                  <div>
+                    <%= image_tag("service-business_meeting.png") %>
+                  </div>
+                  <div>
+                      <p class="home-service-title">Spotkanie Rodzinne</p>
+                      <p class="home-service-info">
+                      Uroczyste spotkania rodzinne! Spotkanie z okazji jubileuszu? A może przyjęcie z okazji rocznicy ślubu? Okazji do spotkań w gronie rodzinnym jest wiele.</p>
+                  </div>
+              </div>
+              <!-- Birthday Party Service -->
+              <div class="col-md-4 text-center">
+                  <div class="meeting-margin">
+                    <%= image_tag("service-birthday_party.png") %>
+
+                  </div>
+                  <div>
+                      <p class="home-service-title">Przyjecie Urodzinowe</p>
+                      <p class="home-service-info">
+                        Coraz bardziej popularną formą świętowania urodzin jest zaproszenie najbliższej rodziny, przyjaciół oraz znajomych na uroczysty obiad lub kolację.
+                      </p>
+                  </div>
+              </div>
+              <!-- Wedding Party Service -->
+              <div class="col-md-4 text-center">
+                  <div class="meeting-margin">
+                    <%= image_tag("service-wedding_party.png") %>
+                  </div>
+                  <div>
+                      <p class="home-service-title">Przyjecie Weselne</p>
+                      <p class="home-service-info">
+                        Przyjęcie weselne w Restauracji "Nad Motlawa" to wyjątkowy smak serwowanych dań, które zachwycą podniebienia nawet najbardziej wymagających gości.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section><!-- Service Section End -->
+
 <!-- Call the slideshow -->
 <%= render 'shared/slideshow' %>
 

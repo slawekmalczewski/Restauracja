@@ -17,3 +17,25 @@
 @import "bootstrap";
 @import "carousel";
 @import "font-awesome";
+@import 'trix/dist/trix.css';
+@import 'actiontext';
+
+trix-editor {
+  .form-control {
+    height:auto;
+  }
+}
+
+.footer-links{
+  color: white;
+}
+
+.footer-links:link{
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links:hover{
+  color: grey;
+  text-decoration: none;
+}

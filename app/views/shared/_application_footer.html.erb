@@ -2,43 +2,70 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-5 col-xs-12 about-company">
-        <h2>Restauracja "Nad Motlawa"</h2>
-        <p class="pr-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p>
-        <p><a href="https://www.facebook.com/nadmotlawa/"><i class="fa fa-facebook-square mr-1"></i></a><a href="https://goo.gl/maps/5fdEL1X94mkU8Cz98"><i class="fa fa-map"></i></a></p>
+        <h4 class="mt-lg-0 mt-sm-3">Restauracja "Nad Motlawa"</h4>
+        <table class="table table-sm table-borderless">
+          <tbody>
+            <% WorkingHour.all.sort_by_day.each do |d| %>
+            <tr style="color:white; font-size: 0.90em;">
+              <td><%= d.day %></td>
+              <td>
+                 <% if d.operating == true %>
+                   <%= "Restauracja Nieczynna" %>
+                 <% else %>
+                   <%= display_only_hour(d.open_time) %> - <%= display_only_hour(d.close_time) %>
+                 <% end %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+
       </div>
       <div class="col-lg-3 col-xs-12 links">
         <h4 class="mt-lg-0 mt-sm-3">Links</h4>
           <ul class="m-0 p-0">
-            <li>- <a href="#">Lorem ipsum</a></li>
-            <li>- <a href="#">Nam mauris velit</a></li>
-            <li>- <a href="#">Etiam vitae mauris</a></li>
-            <li>- <a href="#">Fusce scelerisque</a></li>
-            <li>- <a href="#">Sed faucibus</a></li>
-            <li>- <a href="#">Mauris efficitur nulla</a></li>
+            <li>- <%= link_to("Home", {:controller => 'pages', :action => 'home'}) %></li>
+            <li>- <%= link_to("Menu", {:controller => 'pages', :action => 'daymenu'}) %></li>
+            <li>- <%= link_to("Catering", {:controller => 'pages', :action => 'catering'}) %></li>
+            <li>- <%= link_to("O Nas", {:controller => 'pages', :action => 'about'}) %></li>
           </ul>
       </div>
+
       <div class="col-lg-4 col-xs-12 location">
-        <h4 class="mt-lg-0 mt-sm-4">Location</h4>
-        <p>83-022 Suchy Dab, ul.Gdanska 9</p>
-        <p class="mb-0"><i class="fa fa-phone mr-3"></i>058 6828615</p>
-        <p><i class="fa fa-envelope-o mr-3"></i><a href="mailto:nadmotlawa@op.pl?subject=Zapytanie%20ze%20of%20strony%20internetowej">nadmotlawa@op.pl</a></p>
-      </div>
-      <div class="">
-        <% WorkingHour.all.sort_by_day.each do |d| %>
-          <% if d.operating == true %>
-            <%= d.day %>  <%= "Nieczynne" %>
-          <% else %>
-            <%= d.day %>  <%= display_only_hour(d.open_time) %> - <%= display_only_hour(d.close_time) %>
-          <% end %>
-        <% end %>
+        <h4 class="mt-lg-0 mt-sm-3">Kontakt</h4>
+
+        <table class="table table-sm table-borderless">
+          <tbody>
+
+            <tr style="color:white; font-size: 1em;">
+              <td><a class="footer-links" href="https://goo.gl/maps/5fdEL1X94mkU8Cz98"><i class="fa fa-map"></i></a></td>
+              <td>83-022 Suchy Dab, ul.Gdanska 9</td>
+            </tr>
+
+            <tr style="color:white; font-size: 1em;">
+              <td><i class="fa fa-envelope-o mr-3"></i></td>
+              <td><a class="footer-links" href="mailto:nadmotlawa@op.pl?subject=Zapytanie%20ze%20of%20strony%20internetowej">nadmotlawa@op.pl</a></td>
+            </tr>
+
+            <tr style="color:white; font-size: 1em;">
+              <td><i class="fa fa-phone mr-3"></i></td>
+              <td>058 6828615</td>
+            </tr>
+
+            <tr style="color:white; font-size: 1em;">
+              <td><a class="footer-links" href="https://www.facebook.com/nadmotlawa/"><i class="fa fa-facebook-square"></i></td>
+              <td><a class="footer-links" href="https://www.facebook.com/nadmotlawa/">facebook</a></td>
+            </tr>
+
+          </tbody>
+        </table>
 
       </div>
-
 
     </div>
     <div class="row mt-5">
       <div class="col copyright">
-        <p class=""><small class="text-white-50">© Slawomir Malczewski / 2019. All Rights Reserved.</small></p>
+        <p class=""><small class="text-white-50">© Slawomir Malczewski / <%= DateTime.now.year %>. All Rights Reserved.</small></p>
       </div>
     </div>
   </div>

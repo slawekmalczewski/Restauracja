@@ -53,3 +53,97 @@ header .overlay {
 }
 
 // Public Index CSS - END
+
+// Breaking News - START
+.news {
+    width: 160px
+}
+
+.news-scroll a {
+    text-decoration: none;
+    color: black;
+}
+
+.news-scroll a:hover {
+    text-decoration: none;
+    color: rgb(207, 23, 23);
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 1px !important;
+    background-color: rgb(207, 23, 23);
+    border-radius: 50%;
+    display: inline-block
+}
+
+// Breaking News - START
+
+/* About Section CSS START */
+.home-about-text {
+        color: var(--grayish);
+        font-weight: 400;
+        line-height: 1.7;
+        font-size: 16px;
+}
+.home-resturant-info {
+        color: var(--gunmetal);
+        font-weight: 600;
+        line-height: 1.7;
+}
+.home-resturant-info span {
+    color: var(--rodeo);
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+}
+.home-resturant-info span:hover{
+        color: var(--gunmetal);
+}
+.home-resturant-info a:hover {
+        color: var(--rodeo);
+}
+
+/* About Section CSS END*/
+
+/* Service Section CSS START */
+.home-services {
+        background-color: #fafafa;
+}
+.home-service-title {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--vulcan);
+        margin: 15px 0 10px;
+}
+.home-service-info {
+        font-weight: 500;
+        color: var(--grayish);
+        font-size: 17px;
+        line-height: 1.5;
+}
+/* Service Section CSS END */
+
+/* HR element CSS START */
+
+hr.mystyle1{
+  border-top: 2px dashed grey;
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+
+/* HR element CSS END */
+
+/* Menu JUMBOTRON element CSS START */
+.jumbotron_day_menu{
+  background-image: url("jumbotron_day_menu.jpg");
+  background-size: cover;
+  color: white;
+}
+
+/* Menu JUMBOTRON element CSS END */
