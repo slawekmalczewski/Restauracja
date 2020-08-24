@@ -22,8 +22,14 @@
     </div>
     <div class="col">
       <div class="control-field">
-        <%= form.label :published %>
-        <%= form.check_box :published %>
+        <%= form.label "publish now" %>
+        <%= form.check_box :published,:class => "check" %>
+      </div>
+    </div>
+    <div class="col">
+      <div class="control-field">
+        <%= form.label "publish later" %>
+        <%= form.check_box :schedule_publish,:class => "check", :onclick => "document.getElementById('showonchecked').style.display = (this.checked ? 'inline' : 'none');" %>
       </div>
     </div>
   </div>
@@ -72,3 +78,12 @@
   <% end %>
 
 </div>
+
+<!-- this script will allow only one checkbox to be selected -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.check').click(function() {
+        $('.check').not(this).prop('checked', false);
+    });
+});
+</script>

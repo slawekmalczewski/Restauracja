@@ -1,0 +1,9 @@
+<div class="container-fluid">
+
+  <h3>Liczba potraw ktore wymagaja uaktualnienia: <%= Dish.dish_price_older_than_two_months.count %></h3>
+
+  <h3>Liczba potraw w bazie danych: <%= Dish.all.count %></h3>
+
+  <h3>Liczba ogloszen: <%= Blog.all.count %></h3>
+
+</div>

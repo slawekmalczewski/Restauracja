@@ -19,7 +19,7 @@
             <div class="d-flex justify-content-between align-items-center breaking-news bg-white">
                 <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 news"><span class="d-flex align-items-center">&nbsp;Aktualnosci</span></div>
                 <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
-                  <% Blog.all.is_published.order_by_newest_ad.limit(3).each do |ad| %>
+                  <% Blog.should_i_be_displayed_today.limit(5).each do |ad| %>
                     <%= link_to ad.title, controller: "blogs", action: "show", id: ad.id %>
                     <span class="dot"></span>
                   <% end %>
@@ -30,6 +30,8 @@
 </div>
 
 
+
+<!-- Blog.all.is_published.order_by_newest_ad.limit(3).each -->
 
 <hr class="mystyle1">
 

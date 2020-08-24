@@ -63,6 +63,10 @@ class DishesController < ApplicationController
     end
   end
 
+  def price_out_of_date
+    @price_out_of_date = Dish.dish_price_older_than_two_months
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dish
