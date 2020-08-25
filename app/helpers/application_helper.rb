@@ -10,7 +10,11 @@ module ApplicationHelper
   end
 
   def short_text(text_to_cut)
-    shortened_text = truncate(text_to_cut, :length => 15, :omission => "ciag dalszy nastapi")
+    text = truncate(strip_tags(text_to_cut.to_s), length: 50, omission: " (...)")
+  end
+
+  def style_price_display(price)
+    price = "#{price} zł."
   end
 
 end

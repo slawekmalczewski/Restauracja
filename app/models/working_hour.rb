@@ -25,12 +25,12 @@ class WorkingHour < ApplicationRecord
     opening_time = opening_time.strftime("%H:%M")
     closing_time = WorkingHour.where(:day => z)[0].close_time
     closing_time = closing_time.strftime("%H:%M")
-    day_today = DateTime.now.strftime("%d-%m-%Y")
+    day_today = DateTime.now.strftime("%d/%m/%Y")
     operating_flag = WorkingHour.where(:day => z)[0].operating
     if operating_flag == true
       answer = "Dzis restauracja jest nieczynna"
     else
-      answer = "Dzis jest #{day_today} jestemy otwarci od #{opening_time} do #{closing_time}"
+      answer = "Dzis jest #{what_day_is_today} #{day_today} jestemy otwarci od #{opening_time} do #{closing_time}"
     end
     answer
   end

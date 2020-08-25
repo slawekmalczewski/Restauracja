@@ -1,39 +1,59 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Blogs</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Ogloszenia</h1>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Published</th>
-      <th>Valid from</th>
-      <th>Valid to</th>
-      <th>Main poster</th>
-      <th>Thumb poster</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="row">
+    <div class="col-md-4">
 
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.body %></td>
-        <td><%= blog.published %></td>
-        <td><%= blog.valid_from %></td>
-        <td><%= blog.valid_to %></td>
-        <td><%= blog.main_poster %></td>
-        <td><%= blog.thumb_poster %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    </div>
+    <div class="col-md-4">
+      <%= link_to 'New Blog', new_blog_path %>
+    </div>
+    <div class="col-md-4">
 
-<br>
+    </div>
+  </div>
 
-<%= link_to 'New Blog', new_blog_path %>
+  <div class="row">
+    <div class="col-md-12 table-responsive-md">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Published</th>
+            <th>Valid from</th>
+            <th>Valid to</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @blogs.each do |blog| %>
+            <tr>
+              <td class"col-md-1"><%= blog.title %></td>
+              <td class"col-md-2"><%= short_text(blog.body) %></td>
+              <td class"col-md-1"><%= icon_published_now_or_later(blog.published) %></td>
+              <td class"col-md-2"><%= convert_time_to_readable(blog.valid_from) %></td>
+              <td class"col-md-2"><%= convert_time_to_readable(blog.valid_to) %></td>
+              <td class"col-md-1"><%= link_to 'Show', blog %></td>
+              <td class"col-md-1"><%= link_to 'Edit', edit_blog_path(blog) %></td>
+              <td class"col-md-1"><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-md-12" style="height:300px;">
+        <!-- dummy spacer to keep footer down -->
+      </div>
+    </div>
+
+</div>
