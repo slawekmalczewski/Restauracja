@@ -1,9 +1,17 @@
 <div class="container-fluid">
 
-  <h3>Liczba potraw ktore wymagaja uaktualnienia: <%= Dish.dish_price_older_than_two_months.count %></h3>
+  <h3>Liczba potraw ktore wymagaja uaktualnienia: <%= Dish.dish_price_older_than_two_months.count %>
+  <%= link_to 'Zobacz', {:controller => 'dishes', :action => "price_out_of_date"}, class: 'btn btn-block btn-danger' %>
+  </h3>
 
   <h3>Liczba potraw w bazie danych: <%= Dish.all.count %></h3>
 
   <h3>Liczba ogloszen: <%= Blog.all.count %></h3>
+
+  <ul>
+    <li>Ostatnio utworzone ogloszenie</li>
+    <li>Day Menu zostalo zaktualizowane: data</li>
+    <li>Catering Menu zostalo zaktualizowane: data</li>
+  </ul>
 
 </div>

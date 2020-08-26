@@ -11,8 +11,6 @@
   </div>
 <div class="container-fluid">
 
-  <%= link_to 'Edit', edit_menu_path(@menu) %> |
-  <%= link_to 'Back', menus_path %>
 
   <div class="container py-5">
 
@@ -37,7 +35,7 @@
           <!-- Dania Glowne -->
           <% if @menu.dishes.where(:dish_type => "Danie Glowne").count > 0 %>
             <div class="col-12 mt-4">
-                <h3 class="text-center">Dania Glowne</h3>
+                <h3 class="text-center">Dania główne</h3>
                 <hr class="accent my-5">
             </div>
             <div class="card-columns">
@@ -54,7 +52,7 @@
           <!-- Dania na zimno -->
           <% if @menu.dishes.where(:dish_type => "Danie na zimno").count > 0 %>
             <div class="col-12 mt-4">
-                <h3 class="text-center">Dania na zimno</h3>
+                <h3 class="text-center">Przystawki zimne</h3>
                 <hr class="accent my-5">
             </div>
             <div class="card-columns">

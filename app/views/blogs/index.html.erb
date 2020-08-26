@@ -3,19 +3,16 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <h1>Ogloszenia</h1>
+      <h1>Ogłoszenia</h1>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-4">
-
+  <div class="row mb-4 mt-4">
+    <div class="col-md-2">
+      <%= link_to 'Wstecz', {:controller => 'admins', :action => "index"}, class: 'btn btn-block btn-danger' %>
     </div>
-    <div class="col-md-4">
-      <%= link_to 'New Blog', new_blog_path %>
-    </div>
-    <div class="col-md-4">
-
+    <div class="col-md-3">
+      <%= link_to 'Dodaj Ogloszenie', new_blog_path, class: 'btn btn-block btn-info' %>
     </div>
   </div>
 
@@ -26,23 +23,30 @@
           <tr>
             <th>Title</th>
             <th>Body</th>
-            <th>Published</th>
-            <th>Valid from</th>
-            <th>Valid to</th>
+            <th>Status</th>
+            <th>Info</th>
+            <th>Data utworzenia</th>
+            <th>Opcje</th>
             <th colspan="3"></th>
           </tr>
         </thead>
         <tbody>
           <% @blogs.each do |blog| %>
             <tr>
-              <td class"col-md-1"><%= blog.title %></td>
-              <td class"col-md-2"><%= short_text(blog.body) %></td>
-              <td class"col-md-1"><%= icon_published_now_or_later(blog.published) %></td>
-              <td class"col-md-2"><%= convert_time_to_readable(blog.valid_from) %></td>
-              <td class"col-md-2"><%= convert_time_to_readable(blog.valid_to) %></td>
-              <td class"col-md-1"><%= link_to 'Show', blog %></td>
-              <td class"col-md-1"><%= link_to 'Edit', edit_blog_path(blog) %></td>
-              <td class"col-md-1"><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td class="col-md-2"><%= blog.title %></td>
+              <td class="col-md-2"><%= short_text(blog.body) %></td>
+              <td class="col-md-1"><%= icon_published_now_or_later(blog.published) %></td>
+              <td class="col-md-2">
+                <% if blog.published == true %>
+                  <%= "<span class='small'>Opublikowane</span>".html_safe %>
+                <% else %>
+                  <%= "<span class='small'>Oglosznie tymczasowe <br/> od #{convert_time_to_readable(blog.valid_from)} <br/> do #{convert_time_to_readable(blog.valid_to)}</span>".html_safe %>
+                <% end %>
+              </td>
+              <td class="col-md-1"><%= "<span class='small'> #{convert_time_to_readable(blog.created_at)} </span>".html_safe %></td>
+              <td class="col-md-1"><%= link_to 'Show', blog %></td>
+              <td class="col-md-1"><%= link_to 'Edit', edit_blog_path(blog) %></td>
+              <td class="col-md-1"><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>

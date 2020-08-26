@@ -6,8 +6,7 @@
 <div class="jumbotron jumbotron-fluid jumbotron_day_menu">
   <div class="container">
     <h1 class="display-4">Menu na Dzis</h1>
-    <p class="lead">To menu obowiazuje od <%= @selected_menu.start_date %> do <%= @selected_menu.end_date %><br/>
-      Liczba dan w zestawie: <%= @selected_menu.dishes.count %></p>
+    <p class="lead">Życzymy smacznego</p>
   </div>
 </div>
 
@@ -34,7 +33,7 @@
           <!-- Dania Glowne -->
           <% if @selected_menu.dishes.where(:dish_type => "Danie Glowne").count > 0 %>
             <div class="col-12 mt-4">
-                <h3 class="text-center">Dania Glowne</h3>
+                <h3 class="text-center">Dania główne</h3>
                 <hr class="accent my-5">
             </div>
             <div class="card-columns">
@@ -51,7 +50,7 @@
           <!-- Dania na zimno -->
           <% if @selected_menu.dishes.where(:dish_type => "Danie na zimno").count > 0 %>
             <div class="col-12 mt-4">
-                <h3 class="text-center">Dania na zimno</h3>
+                <h3 class="text-center">Przystawki zimne</h3>
                 <hr class="accent my-5">
             </div>
             <div class="card-columns">

@@ -1,9 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
       <h1>Godziny Otwarcia</h1>
+    </div>
+  </div>
+
+  <div class="row mb-4 mt-4">
+    <div class="col-md-2">
+      <%= link_to 'Wstecz', {:controller => 'admins', :action => "index"}, class: 'btn btn-block btn-danger' %>
+    </div>
+    <div class="col-md-3">
+      <%= link_to 'Dodaj Godzine', new_working_hour_path, class: 'btn btn-block btn-info' %>
     </div>
   </div>
 
@@ -24,12 +32,12 @@
           <% @working_hours.each do |working_hour| %>
           <tr>
             <td class="col-md-3"><%= working_hour.day %></td>
-            <td class="col-md-3"><%= iconStatus(working_hour.operating) %></td>
-            <td class="col-md-3"><%= display_only_hour(working_hour.open_time)%></td>
-            <td class="col-md-3"><%= display_only_hour(working_hour.close_time) %></td>
-            <td class="col-md-3"><%= link_to 'Show', working_hour %></td>
-            <td class="col-md-3"><%= link_to 'Edit', edit_working_hour_path(working_hour) %></td>
-            <td class="col-md-3"><%= link_to 'Destroy', working_hour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="col-md-1"><%= iconStatus(working_hour.operating) %></td>
+            <td class="col-md-2"><%= display_only_hour(working_hour.open_time)%></td>
+            <td class="col-md-2"><%= display_only_hour(working_hour.close_time) %></td>
+            <td class="col-md-1"><%= link_to 'Show', working_hour %></td>
+            <td class="col-md-1"><%= link_to 'Edit', edit_working_hour_path(working_hour) %></td>
+            <td class="col-md-1"><%= link_to 'Destroy', working_hour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
           <% end %>
         </tbody>
@@ -37,10 +45,8 @@
     </div>
   </div>
 
-
   <br>
 
-  <%= link_to 'New Working Hour', new_working_hour_path %>
 
   <div class="row">
     <div class="col-md-12" style="height:300px;">
