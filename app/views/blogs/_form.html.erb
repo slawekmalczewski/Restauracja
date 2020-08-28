@@ -14,68 +14,87 @@
   <% end %>
 
   <div class="row">
-    <div class="col">
+    <div class="col-md-6">
       <div class="control-field">
-        <%= form.label :title %>
-        <%= form.text_field :title %>
+        <%= form.label "Tytul" %>
+        <%= form.text_field :title, :class => "form-control" %>
       </div>
     </div>
-    <div class="col">
+    <div class="col-md-2 text-center">
       <div class="control-field">
-        <%= form.label "publish now" %>
+        <%= form.label "Publikuj teraz" %>
         <%= form.check_box :published,:class => "check" %>
       </div>
     </div>
-    <div class="col">
+    <div class="col-md-2 text-center">
       <div class="control-field">
-        <%= form.label "publish later" %>
+        <%= form.label "Publikuj Pozniej" %>
         <%= form.check_box :schedule_publish,:class => "check", :onclick => "document.getElementById('showonchecked').style.display = (this.checked ? 'inline' : 'none');" %>
+      </div>
+    </div>
+    <div class="col-md-2 text-center">
+      <div class="control-field">
+        <%= form.label "Nie publikuj" %>
+        <%= form.check_box :not_publish,:class => "check", :onclick => "document.getElementById('showonchecked').style.display = (this.checked ? 'inline' : 'none');" %>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="control-field">
-      <%= form.label :body %>
+  <div class="row mt-4">
+    <div class="col">
+      <%= form.label "Tresc" %>
       <%= form.rich_text_area :body %>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col">
+  <div class="row mt-4">
+    <div class="col-6">
       <div class="control-field">
-        <%= form.label :valid_from %>
+        <%= form.label "Wazne od" %>
         <%= form.datetime_select :valid_from %>
       </div>
     </div>
-    <div class="col">
+    <div class="col-6">
       <div class="control-field">
-        <%= form.label :valid_to %>
+        <%= form.label "Wazne do" %>
         <%= form.datetime_select :valid_to %>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="control-field">
-      <%= form.label :main_poster %>
-      <%= form.text_area :main_poster %>
+  <div class="row mt-4">
+    <div class="col">
+      <div class="control-field">
+        <%= form.label :main_poster %>
+        <%= form.file_field :main_poster %>
+      </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="control-field">
-      <%= form.label :thumb_poster %>
-      <%= form.text_area :thumb_poster %>
+  <div class="row mt-4">
+    <div class="col">
+      <div class="control-field">
+        <%= form.label :thumb_poster %>
+        <%= form.file_field :thumb_poster %>
+      </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="actions">
-      <%= form.submit %>
+  <div class="row mt-4">
+    <div class="col-2">
+      <div class="actions">
+        <%= link_to 'Wstecz', {:controller => 'admins', :action => "index"}, class: 'btn btn-block btn-danger' %>
+      </div>
+
+    </div>
+    <div class="col-2">
+      <div class="actions">
+        <%= form.submit "Zapisz", class: "btn btn-block btn-success" %>
+      </div>
     </div>
   </div>
   <% end %>
+
 
 </div>
 

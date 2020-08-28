@@ -13,35 +13,33 @@
     <% end %>
 
   <div class="row">
-    <div class="col">
-      <div class="control-group">
-        <%= form.label :name, class: "control-label" %>
-        <div class="controls">
-          <%= form.text_field :name %>
-        </div>
+    <div class="col-md-6">
+      <div class="control-field">
+        <%= form.label "Nazwa" %>
+        <%= form.text_field :name, class: "form-control"  %>
       </div>
     </div>
-    <div class="col">
+    <div class="col-md-2 text-center">
       <div class="control-group">
-        <%= form.label :default_menu, class: "control-label" %>
+        <%= form.label "Menu Domyslne", class: "control-label" %>
         <div class="controls">
           <%= form.check_box :default_menu,:class => "check" %>
         </div>
       </div>
     </div>
 
-    <div class="col">
+    <div class="col-md-2 text-center">
       <div class="control-group">
-        <%= form.label :catering_menu, class: "control-label" %>
+        <%= form.label "Catering Menu", class: "control-label" %>
         <div class="controls">
           <%= form.check_box :catering_menu,:class => "check" %>
         </div>
       </div>
     </div>
 
-    <div class="col">
+    <div class="col-md-2 text-center">
       <div class="control-group">
-        <%= form.label :temporary_menu, class: "control-label" %>
+        <%= form.label "Menu Tymczasowe", class: "control-label" %>
         <div class="controls">
           <%= form.check_box :temporary_menu,:class => "check", :onclick => "document.getElementById('showonchecked').style.display = (this.checked ? 'inline' : 'none');" %>
         </div>
@@ -53,7 +51,7 @@
 <div class="row">
   <div class="col">
     <div class="control-group">
-      <%= form.label "Wybierz Potrawy", class: "control-label" %><br />
+      <h4><%= form.label "Wybierz Potrawy", class: "control-label" %></h4>
       <div class="controls">
         <%= form.collection_check_boxes :dish_ids, Dish.all, :id, :extended_info_for_check_boxes do |b| %>
         <div class="collection-check-box">
@@ -66,37 +64,38 @@
   </div>
 </div>
 <hr class="style2">
-<div class="row">
-  <div id="showonchecked" style="display:none">
-    <div class="col">
-      <div class="control-group">
-        <%= form.label :start_date, class: "control-label" %>
-        <div class="controls">
-          <%= form.datetime_select :start_date %>
-        </div>
+
+<div id="showonchecked" style="display:none">
+  <div class="row mt-4">
+    <div class="col-6">
+      <div class="control-field">
+        <%= form.label "Wazne Od: " %>
+        <%= form.datetime_select :start_date %>
       </div>
     </div>
-    <div class="col">
-      <div class="control-group">
-        <%= form.label :end_date, class: "control-label" %>
-        <div class="controls">
-          <%= form.datetime_select :end_date %>
-        </div>
+    <div class="col-6">
+      <div class="control-field">
+        <%= form.label "Wazne Do: " %>
+        <%= form.datetime_select :end_date %>
       </div>
-    </div>
-      <hr class="style2">
-  </div>
-
-</div>
-
-
-<div class="row">
-  <div class="col">
-    <div class="controls">
-      <%= form.submit :class => 'btn btn-primary' %>
     </div>
   </div>
 </div>
+
+<div class="row mt-4">
+  <div class="col-2">
+    <div class="actions">
+      <%= link_to 'Wstecz', {:controller => 'admins', :action => "index"}, class: 'btn btn-block btn-danger' %>
+    </div>
+
+  </div>
+  <div class="col-2">
+    <div class="actions">
+      <%= form.submit "Zapisz", class: "btn btn-block btn-success" %>
+    </div>
+  </div>
+</div>
+
 
 
   <% end %>

@@ -11,7 +11,7 @@ class Menu < ApplicationRecord
     if Menu.where("start_date < ? AND end_date > ? AND temporary_menu = ?", DateTime.now, DateTime.now, true).exists?
       temporary_menu = Menu.where("start_date < ? AND end_date > ? AND temporary_menu = ?", DateTime.now, DateTime.now, true)[0].id
     else
-      default_one = Menu.where("default_menu = ?", true)[0].id
+      default_one = Menu.where("default_menu = ?", true).order(created_at: :desc)[0].id
     end
   end
 

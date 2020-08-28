@@ -3,7 +3,7 @@ class Dish < ApplicationRecord
 
 
   def extended_info_for_check_boxes
-    "#{ name } (#{weight}#{weight_unit}) - #{ price } zl / #{updated_at}"
+    "#{ name } (#{weight}#{weight_unit}) &thinsp; --> &thinsp; #{ price } zł <span class='small'>(Cena uaktualniona dnia: #{updated_at.strftime('%d %b, %Y')}) </span>".html_safe
   end
 
   def self.dish_price_older_than_two_months

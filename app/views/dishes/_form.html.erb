@@ -1,47 +1,76 @@
-<%= form_with(model: dish, local: true) do |form| %>
+<div class="container-fluid">
+  <%= form_with(model: dish, local: true) do |form| %>
   <% if dish.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
 
-      <ul>
+    <ul>
       <% dish.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+
+
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="control-field">
+        <%= form.label "Nazwa" %>
+        <%= form.text_field :name, :class => "form-control" %>
+      </div>
+    </div>
+
   </div>
 
+<div class="row mt-4">
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label "Opis" %>
     <%= form.text_area :description %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :weight %>
-    <%= form.text_field :weight %>
-  </div>
 
-  <div class="field">
-    <%= form.label :weight_unit %>
-    <%= form.text_field :weight_unit %>
-  </div>
-
-  <div class="field">
+<div class="row mt-4">
+  <div class="col-4">
     <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
+  <div class="col-4">
+    <%= form.label :weight %>
+    <%= form.text_field :weight %>
+  </div>
+  <div class="col-4">
+    <%= form.label :weight_unit %>
+    <%= form.text_field :weight_unit %>
+  </div>
+</div>
 
-  <div class="field">
-    <%= form.label :dish_type %>
-    <%= form.select :dish_type, ['Danie Glowne', 'Zupa', 'Dodatek', 'Danie na zimno', 'Napoje'] %>
+
+
+<div class="row mt-4">
+  <%= form.label :dish_type %>
+  <%= form.select :dish_type, ['Danie Glowne', 'Zupa', 'Dodatek', 'Danie na zimno', 'Napoje'] %>
+</div>
+
+
+<div class="row mt-4">
+  <div class="col-2">
+    <div class="actions">
+      <%= link_to 'Wstecz', {:controller => 'admins', :action => "index"}, class: 'btn btn-block btn-danger' %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="col-2">
+    <div class="actions">
+      <%= form.submit "Zapisz", class: "btn btn-block btn-success" %>
+    </div>
   </div>
-<% end %>
+</div>
+  <% end %>
+
+
+
+</div>

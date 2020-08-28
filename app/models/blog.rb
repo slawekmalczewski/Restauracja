@@ -6,6 +6,8 @@ class Blog < ApplicationRecord
 
   scope :is_published, -> { where(published: :true)}
 
+  scope :not_published, -> { where(not_publish: :true)}
+
   #this function will determine if blog post/ad with configured publish schedule should be displayed today
 
   def self.should_i_be_displayed_today

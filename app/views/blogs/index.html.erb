@@ -39,6 +39,8 @@
               <td class="col-md-2">
                 <% if blog.published == true %>
                   <%= "<span class='small'>Opublikowane</span>".html_safe %>
+                <% elsif blog.not_publish == true %>
+                  <%= "<span class='small'>Nieopublikowane</span>".html_safe %>                
                 <% else %>
                   <%= "<span class='small'>Oglosznie tymczasowe <br/> od #{convert_time_to_readable(blog.valid_from)} <br/> do #{convert_time_to_readable(blog.valid_to)}</span>".html_safe %>
                 <% end %>
