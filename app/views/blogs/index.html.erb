@@ -14,6 +14,9 @@
     <div class="col-md-3">
       <%= link_to 'Dodaj Ogloszenie', new_blog_path, class: 'btn btn-block btn-info' %>
     </div>
+    <div class="col-md-3">
+      <%= link_to("Admin Panel", {:controller => 'admins', :action => 'index'}, class: 'btn btn-block btn-warning') %>
+    </div>
   </div>
 
   <div class="row">
@@ -40,7 +43,7 @@
                 <% if blog.published == true %>
                   <%= "<span class='small'>Opublikowane</span>".html_safe %>
                 <% elsif blog.not_publish == true %>
-                  <%= "<span class='small'>Nieopublikowane</span>".html_safe %>                
+                  <%= "<span class='small'>Nieopublikowane</span>".html_safe %>
                 <% else %>
                   <%= "<span class='small'>Oglosznie tymczasowe <br/> od #{convert_time_to_readable(blog.valid_from)} <br/> do #{convert_time_to_readable(blog.valid_to)}</span>".html_safe %>
                 <% end %>
