@@ -15,6 +15,9 @@
     <div class="col-md-3">
       <%= link_to 'Dodaj Potrawe', new_dish_path, class: 'btn btn-block btn-info' %>
     </div>
+    <div class="col-md-3">
+      <%= link_to("Admin Panel", {:controller => 'admins', :action => 'index'}, class: 'btn btn-block btn-warning') %>
+    </div>
   </div>
 
   <div class="row">

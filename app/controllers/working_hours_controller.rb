@@ -1,4 +1,5 @@
 class WorkingHoursController < ApplicationController
+  access admin: :all
   before_action :set_working_hour, only: [:show, :edit, :update, :destroy]
 
   # GET /working_hours
