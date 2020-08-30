@@ -1,19 +1,16 @@
 Rails.application.routes.draw do
+
+devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}, controllers: { registrations: "registrations" }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+root to: "pages#home"
 
 resources :blogs
 resources :working_hours
-root "pages#home"
-get 'home', to: "pages#home"
-get 'about', to: "pages#about"
-get 'contact', to: "pages#contact"
-get 'daymenu', to: "pages#daymenu"
-get 'catering', to: "pages#catering"
-
-get 'price_out_of_date', to: "dishes#price_out_of_date"
-
 resources :menus
 resources :dishes
 resources :admins
+
+match ':controller(/:action(/:id))', :via => [:get, :post]
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

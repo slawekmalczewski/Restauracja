@@ -1,4 +1,8 @@
 class PagesController < ApplicationController
+
+  access all: [:home, :about, :contact, :catering, :daymenu], admin: :all
+
+
   def home
     render layout: 'public_index'
 

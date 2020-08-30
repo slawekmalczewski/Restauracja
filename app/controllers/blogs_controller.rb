@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  access admin: :all
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   # GET /blogs
