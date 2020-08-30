@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @dish.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @dish.description %>
-</p>
+<div class="container-fluid">
 
-<p>
-  <strong>Weight:</strong>
-  <%= @dish.weight %>
-</p>
+  <div class="row">
+    <div class="col-md-4">
 
-<p>
-  <strong>Weight unit:</strong>
-  <%= @dish.weight_unit %>
-</p>
+    </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @dish.price %>
-</p>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= @dish.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= @dish.dish_type %></h6>
+          <p class="card-text"><%= @dish.description %><br/>
+            <span class="small"><%= @dish.weight %> <%= @dish.weight_unit %><br/> cena:<%= @dish.price %></span></p>
+            <%= link_to 'Edytuj', edit_dish_path(@dish), class: 'btn btn-block btn-warning' %>
+            <%= link_to("OK", {:controller => 'admins', :action => 'index'}, class: 'btn btn-block btn-success') %>
+          </div>
+        </div>
+      </div>
 
-<%= link_to 'Edit', edit_dish_path(@dish) %> |
-<%= link_to 'Back', dishes_path %>
+      <div class="col-md-4">
+
+      </div>
+  </div>
+
+</div>

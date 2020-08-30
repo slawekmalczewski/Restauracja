@@ -1,0 +1,7 @@
+<% if flash[:alert] %>
+  <%= js add_gritter(flash[:alert], title: "Restauracja Nad Motlawa", sticky: false, time: 4000) %>
+<% elsif flash[:error] %>
+  <%= js add_gritter(flash[:error], title: "Restauracja Nad Motlawa", sticky: false, time: 4000) %>
+<% else flash[:notice] %>
+  <%= js add_gritter(flash[:notice], title: "Restauracja Nad Motlawa", sticky: false, time: 4000) %>
+<% end %>
