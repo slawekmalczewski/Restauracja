@@ -5,15 +5,15 @@ class WorkingHour < ApplicationRecord
   def self.check_if_we_are_open
     what_day_is_today = Time.now.strftime("%A")
     if what_day_is_today == "Monday"
-      what_day_is_today = "Poniedzialek"
+      what_day_is_today = "poniedziałek"
     elsif what_day_is_today == "Tuesday"
       what_day_is_today = "Wtorek"
     elsif what_day_is_today == "Wednesday"
-      what_day_is_today = "Sroda"
+      what_day_is_today = "Środa"
     elsif what_day_is_today == "Thursday"
       what_day_is_today = "Czwartek"
     elsif what_day_is_today == "Friday"
-      what_day_is_today = "Piatek"
+      what_day_is_today = "Piątek"
     elsif what_day_is_today == "Saturday"
       what_day_is_today = "Sobota"
     else
