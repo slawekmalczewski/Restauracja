@@ -1,0 +1,63 @@
+<%= form_for(:photo, :url => {:action => 'create'}) do |form| %>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="control-field">
+        <%= form.label "Tytul" %>
+        <%= form.text_field :title, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-2 text-center">
+      <div class="control-field">
+        <%= form.label "Publikuj" %>
+        <%= form.check_box :published,:class => "check" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col">
+      <%= form.label "Opis Zdjecia" %>
+      <%= form.rich_text_area :description %>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col">
+      <%= form.label "Galeria" %>
+
+      <%= form.select(:gallery_id, @allgalleries.map{|t| [t.title, t.id]}, :selected => @current_gallery.id ) %>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col">
+      <%= form.label "Pozycja w galerii" %>
+      <%= form.select(:position, 1..@number_of_images_in_selected_gallery) %>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col">
+      <div class="control-field">
+        <%= form.label :photo_file %>
+        <%= form.file_field :photo_file %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-2">
+      <div class="actions">
+        <%= link_to 'Wstecz', {:controller => 'admins', :action => "index"}, class: 'btn btn-block btn-danger' %>
+      </div>
+
+    </div>
+    <div class="col-2">
+      <div class="actions">
+        <%= form.submit "Zapisz", class: "btn btn-block btn-success" %>
+      </div>
+    </div>
+  </div>
+<% end %>

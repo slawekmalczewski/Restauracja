@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<% obrazek=url_for(@gallery.cover_image) %>
+<div class="jumbotron jumbotron-fluid gallery_jumbotron" style="background-image: url(<%= url_for(@gallery.cover_image) %>) ">
+  <div class="container">
+    <h1 class="display-4"><%= @gallery.title %></h1>
+    <p class="lead"><%= @gallery.description.html_safe %></p>
+  </div>
+</div>
+<% if user_signed_in? %>
+  <%= link_to "Dodaj Zdjecie",{:controller => 'photos', :action => "new", :id => @gallery}, class: "btn btn-block btn-success" %>
+<% end %>
+
+<% @photos.all.each do |p| %>
+  <%= image_tag(p.photo_file.variant(combine_options: {resize: '300^x300', gravity: 'center'}).processed) %>
+<% end %>
+
+
+
+
+<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+<%= link_to 'Back', galleries_path %>

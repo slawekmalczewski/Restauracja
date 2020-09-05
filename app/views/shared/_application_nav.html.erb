@@ -19,12 +19,17 @@
 
       <li>
         <% if user_signed_in? %>
+          <%= link_to("Admin Panel",{:controller => 'admins', :action => 'index'}, :class => "nav-link") %>
+        <% end %>
+      </li>
+
+      <li>
+        <% if user_signed_in? %>
           <%= link_to("Logout", destroy_user_session_path, method: :delete, :class => "nav-link") %>
         <% else %>
           <%= link_to("Login", new_user_session_path, method: :get, :class => "nav-link") %>
         <% end %>
       </li>
-
 
     </ul>
   </div>

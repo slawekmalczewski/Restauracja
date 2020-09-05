@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_29_231021) do
+ActiveRecord::Schema.define(version: 2020_09_05_182437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,15 @@ ActiveRecord::Schema.define(version: 2020_08_29_231021) do
     t.bigint "menu_id", null: false
   end
 
+  create_table "galleries", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.boolean "published"
+    t.integer "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "menus", force: :cascade do |t|
     t.string "name"
     t.datetime "start_date"
@@ -86,6 +95,16 @@ ActiveRecord::Schema.define(version: 2020_08_29_231021) do
     t.boolean "default_menu"
     t.boolean "catering_menu"
     t.boolean "temporary_menu"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "position"
+    t.boolean "published"
+    t.integer "gallery_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
