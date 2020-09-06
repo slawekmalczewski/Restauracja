@@ -11,12 +11,27 @@
   <%= link_to "Dodaj Zdjecie",{:controller => 'photos', :action => "new", :id => @gallery}, class: "btn btn-block btn-success" %>
 <% end %>
 
-<% @photos.all.each do |p| %>
-  <%= image_tag(p.photo_file.variant(combine_options: {resize: '300^x300', gravity: 'center'}).processed) %>
+<% @photos.all.each_slice(3) do |photo_row| %>
+  <div class="row justify-content-center">
+    <% photo_row.each do |p| %>
+    <div class="col-md-3 p-2 m-3">
+      <div class="overlay-container d-flex justify-content-center m-auto" data-overlay-text="<%= p.title %>">
+        <%= link_to image_tag(p.photo_file.variant(combine_options: {resize: '300^x300', gravity: 'center', extent: '300x300'}).processed, :class => "img-responsive overlay-img"), p.photo_file, data: {lightbox: 'roadtrip', title: p.title+p.description} %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 <% end %>
-
-
 
 
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
 <%= link_to 'Back', galleries_path %>
+
+
+<script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true,
+      'fitImagesInViewport': true
+    })
+</script>

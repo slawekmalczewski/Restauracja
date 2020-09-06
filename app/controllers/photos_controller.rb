@@ -4,7 +4,8 @@ class PhotosController < ApplicationController
 
   # GET /photos
   def index
-    @photos = Photo.all
+    passed_gallery_index = Gallery.find(params[:id_gal]) #this variable catches the gallery index passed when you clisk to show photos from a particular gallery
+    @photos = Photo.all.where(:gallery_id => passed_gallery_index)
   end
 
   # GET /photos/1
@@ -21,6 +22,9 @@ class PhotosController < ApplicationController
 
   # GET /photos/1/edit
   def edit
+    @gallery_id_where_photo_belongs_to = Gallery.find(params[:id_gal])
+    @allgalleries = Gallery.all
+    @number_of_images_in_selected_gallery = Photo.all.where(:gallery_id => @gallery_id_where_photo_belongs_to).count + 1
   end
 
   # POST /photos
