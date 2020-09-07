@@ -20,3 +20,26 @@ img:hover {
   filter: none; /* IE6-9 */
   -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
 }
+
+.gallery_info_text {
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding: 0.85em;
+}
+
+.gallery_info_tile {
+  display: block;
+  position: absolute;
+  width: 90%;
+  top: 70%;
+  left: auto;
+  background-color: #273845;
+  opacity: 0.70;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}

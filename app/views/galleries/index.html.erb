@@ -2,14 +2,26 @@
 
 <div class="container-fluid">
   <h1>Galerie</h1>
-  <div class="row">
-    <div class="col-md-3 col-sm-4 col-xs-6">
-      <% @galleries.each do |gal| %>
-        <%= image_tag(gal.cover_image.variant(combine_options: {resize: '350^x350', gravity: 'center', extent: '350x150'}).processed, :class => "img-responsive") %>
-      <% end %>
 
+  <% @galleries.all.each_slice(3) do |photo_gallery| %>
+  <div class="row justify-content-center">
+    <% photo_gallery.each do |p| %>
+    <div class="col-md-3 p-2 m-3">
+      <div class="overlay-container d-flex justify-content-center m-auto">
+        <%= link_to image_tag(p.cover_image.variant(combine_options: {resize: '300^x300', gravity: 'center', extent: '300x300'}).processed, :class => "img-responsive"), gallery_path(p), :"data-turbolinks" => false %>
+        <div class="gallery_info_tile">
+          <div class="gallery_info_text"><%= p.title %></div>
+        </div>
+      </div>
     </div>
+    <% end %>
+  </div>
+  <% end %>
 
+  <div class="row">
+    <div class="col-md-12" style="height:300px;">
+      <!-- dummy spacer to keep footer down -->
+    </div>
   </div>
 
 </div>
