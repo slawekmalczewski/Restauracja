@@ -13,8 +13,7 @@
       </li>
       <li class="<%= 'nav-item active' if params[:controller] == 'pages' && params[:action] == 'about' %>"><%= link_to("O Nas", {:controller => 'pages', :action => 'about'}, :class => "nav-link") %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Live Feeds</a>
+      <li class="<%= 'nav-item active' if params[:controller] == 'galleries' && params[:action] == 'index' %>"><%= link_to("Galerie", {:controller => 'galleries', :action => 'index'}, :class => "nav-link") %>
       </li>
 
       <li>
