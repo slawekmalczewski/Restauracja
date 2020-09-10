@@ -61,6 +61,8 @@ header .overlay {
 
 // Public Index CSS - END
 
+
+
 // Breaking News - START
 .news {
     width: 160px
@@ -136,6 +138,8 @@ header .overlay {
 }
 /* Service Section CSS END */
 
+
+
 /* HR element CSS START */
 
 hr.mystyle1{
@@ -145,6 +149,8 @@ hr.mystyle1{
 }
 
 /* HR element CSS END */
+
+
 
 /* Menu JUMBOTRON element CSS START */
 .jumbotron_day_menu{
@@ -194,7 +200,7 @@ hr.mystyle1{
     color: #2f2f2f;
     background-color: #f9f7f1;
 }
-header {
+.newspaperheader {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
     font-size: 5em;
@@ -213,8 +219,7 @@ p{
     width: 100%;
 }
 
-.headerobjectswrapper{
-}
+
 
 .subhead{
     text-transform: uppercase;
@@ -468,3 +473,10 @@ p{
 }
 
 /* O NAS NEWSPAPER CSS END */
+
+
+.home_page_random_image{
+  background: #ffffff;
+  border: 4px;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.15);
+}

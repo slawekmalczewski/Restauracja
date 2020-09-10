@@ -8,7 +8,7 @@ section{
     padding: 100px 0;
 }
 .details-card {
-	background: #ecf0f1;
+
 }
 
 .card-content {
@@ -22,6 +22,7 @@ section{
 	overflow: hidden;
 	border-radius: 0;
 	z-index: 1;
+  padding:7px;
 }
 
 .card-img img {
@@ -57,17 +58,17 @@ section{
 
 .card-desc h3 {
 	color: #000000;
-    font-weight: 600;
-    font-size: 1.5em;
-    line-height: 1.3em;
-    margin-top: 0;
-    margin-bottom: 5px;
-    padding: 0;
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 1.3em;
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding: 0;
 }
 
 .card-desc p {
 	color: #747373;
-    font-size: 14px;
+  font-size: 14px;
 	font-weight: 400;
 	font-size: 1em;
 	line-height: 1.5;

@@ -13,7 +13,7 @@
             <div class="col-md-6">
                 <div class="card-content">
                     <div class="card-img">
-                        <img src="https://placeimg.com/380/230/nature" alt="">
+                      <%= image_tag(@blog.main_poster) %>
                         <span><h4><%= convert_time_to_readable(@blog.created_at) %></h4></span>
                     </div>
                     <div class="card-desc">

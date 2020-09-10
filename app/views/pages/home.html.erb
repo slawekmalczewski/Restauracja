@@ -1,4 +1,4 @@
-<header class="home_header">
+<header>
   <div class="overlay"></div>
     <%= video_tag( 'IndexVideo.mp4', id: 'background', autoplay: true, loop: true, muted: true )%>
   <div class="container h-100">
@@ -88,7 +88,7 @@
              <!-- About Section Image-->
              <div class="col-md-6">
                  <div class="home-about-picture text-right">
-                     <%= image_tag("historia-#{rand(1..3)}.png", size: '500x300', :crop => :fill) %>
+                     <%= image_tag("historia-#{rand(1..3)}.png", size: '500x300', :crop => :fill, :class => "home_page_random_image") %>
                  </div>
              </div>
          </div>
@@ -109,7 +109,7 @@
           <div class="row">
               <div class="col-md-4 text-center">
                   <div>
-                    <%= image_tag("service-business_meeting.png") %>
+                    <%= image_tag("service-business_meeting.png", :class => "service_image") %>
                   </div>
                   <div>
                       <p class="home-service-title">Spotkanie Rodzinne</p>
@@ -120,7 +120,7 @@
               <!-- Birthday Party Service -->
               <div class="col-md-4 text-center">
                   <div class="meeting-margin">
-                    <%= image_tag("service-birthday_party.png") %>
+                    <%= image_tag("service-birthday_party.png", :class => "service_image") %>
 
                   </div>
                   <div>
@@ -133,7 +133,7 @@
               <!-- Wedding Party Service -->
               <div class="col-md-4 text-center">
                   <div class="meeting-margin">
-                    <%= image_tag("service-wedding_party.png") %>
+                    <%= image_tag("service-wedding_party.png", :class => "service_image") %>
                   </div>
                   <div>
                       <p class="home-service-title">Przyjecie Weselne</p>
