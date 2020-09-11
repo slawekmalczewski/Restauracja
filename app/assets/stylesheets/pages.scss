@@ -154,17 +154,21 @@ hr.mystyle1{
 
 /* Menu JUMBOTRON element CSS START */
 .jumbotron_day_menu{
-  background-image: url("jumbotron_day_menu.jpg");
+  background-image: url("https://nadmotlawa.s3-eu-west-1.amazonaws.com/static-content/jumbotron_catering_menu.jpg");
   background-size: cover;
   color: white;
+  height: 25rem;
+  max-height: 30rem;
 }
 /* Menu JUMBOTRON element CSS END */
 
 /* Catering JUMBOTRON element CSS START */
 .jumbotron_catering_menu{
-  background-image: url("jumbotron_catering_menu.jpg");
+  background-image: url("https://nadmotlawa.s3-eu-west-1.amazonaws.com/static-content/jumbotron_day_menu.jpg");
   background-size: cover;
   color: white;
+  height: 25rem;
+  max-height: 30rem;
 }
 /* Menu JUMBOTRON element CSS END */
 

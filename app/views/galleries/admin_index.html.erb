@@ -25,6 +25,7 @@
       <table class="table table-hover">
         <thead>
           <tr>
+            <th scope="col">Pozycja</th>
             <th scope="col">Nazwa</th>
             <th scope="col">Opis</th>
             <th scope="col">Ilosc Zdjec</th>
@@ -34,6 +35,7 @@
         <tbody>
           <% @galleries.each do |gal| %>
           <tr>
+            <td class="col-md-1"><%= gal.position %></td>
             <td class="col-md-2"><%= gal.title %></td>
             <td class="col-md-2"><%= gal.description %></td>
             <td class="col-md-2"><%= gal.photos.count %></td>

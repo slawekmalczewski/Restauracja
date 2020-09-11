@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <% obrazek=url_for(@gallery.cover_image) %>
 <div class="jumbotron jumbotron-fluid gallery_jumbotron" style="background-image: url(<%= url_for(@gallery.cover_image) %>) ">
   <div class="container">
@@ -16,7 +14,7 @@
     <% photo_row.each do |p| %>
     <div class="col-md-3 p-2 m-3">
       <div class="overlay-container d-flex justify-content-center m-auto" data-overlay-text="<%= p.title %>">
-        <%= link_to image_tag(p.photo_file.variant(combine_options: {resize: '300^x300', gravity: 'center', extent: '300x300'}).processed, :class => "img-responsive overlay-img"), p.photo_file, data: {lightbox: 'roadtrip', title: p.title+p.description} %>
+        <%= link_to image_tag(p.photo_file.variant(combine_options: {resize: '300^x300', gravity: 'center', extent: '300x300'}).processed, :class => "img-responsive gallery_image"), p.photo_file, data: {lightbox: 'roadtrip', title: p.title+p.description} %>
       </div>
     </div>
     <% end %>

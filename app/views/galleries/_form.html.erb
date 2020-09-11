@@ -1,71 +1,78 @@
-<%= form_with(model: gallery, local: true) do |form| %>
-  <% if gallery.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
+<div class="container-fluid">
+  <%= form_with(model: gallery, local: true) do |form| %>
+    <% if gallery.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
 
-      <ul>
-        <% gallery.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% gallery.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="control-field">
+          <%= form.label "Tytul" %>
+          <%= form.text_field :title, :class => "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-2 text-center">
+        <div class="control-group">
+          <%= form.label "Publikuj", class: "control-label" %>
+          <div class="controls">
+            <%= form.check_box :published,:class => "checkbox" %>
+          </div>
+        </div>
+      </div>
     </div>
+
+
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="control-field">
+          <%= form.label "Opis galerii" %>
+          <%= form.text_area :description, :class => "form-control", :rows => 5 %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col">
+        <%= form.label "Pozycja" %>
+        <%= form.select(:position, 1..@number_of_galleries) %>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col">
+        <div class="control-field">
+          <%= form.label :cover_image %>
+          <%= form.file_field :cover_image %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-2">
+        <div class="actions">
+          <%= link_to 'Wstecz', :back, class: 'btn btn-block btn-danger' %>
+        </div>
+
+      </div>
+      <div class="col-2">
+        <div class="actions">
+          <%= form.submit "Zapisz", class: "btn btn-block btn-success" %>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="actions">
+          <%= link_to "Dodaj Zdjecie",{:controller => 'photos', :action => "new", :id => @gallery_id}, class: "btn btn-block btn-success" %>
+        </div>
+      </div>
+    </div>
+
   <% end %>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="control-field">
-        <%= form.label "Tytul" %>
-        <%= form.text_field :title, :class => "form-control" %>
-      </div>
-    </div>
-    <div class="col-md-2 text-center">
-      <div class="control-field">
-        <%= form.label "Publikuj" %>
-        <%= form.check_box :published,:class => "check" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="row mt-4">
-    <div class="col">
-      <%= form.label "Opis galerii" %>
-      <%= form.text_area :description %>
-    </div>
-  </div>
-
-  <div class="row mt-4">
-    <div class="col">
-      <%= form.label "Pozycja" %>
-      <%= form.text_field :position %>
-    </div>
-  </div>
-
-  <div class="row mt-4">
-    <div class="col">
-      <div class="control-field">
-        <%= form.label :cover_image %>
-        <%= form.file_field :cover_image %>
-      </div>
-    </div>
-  </div>
-
-  <div class="row mt-4">
-    <div class="col-2">
-      <div class="actions">
-        <%= link_to 'Wstecz', {:controller => 'admins', :action => "index"}, class: 'btn btn-block btn-danger' %>
-      </div>
-
-    </div>
-    <div class="col-2">
-      <div class="actions">
-        <%= form.submit "Zapisz", class: "btn btn-block btn-success" %>
-      </div>
-    </div>
-    <div class="col-2">
-      <div class="actions">
-        <%= link_to "Dodaj Zdjecie",{:controller => 'photos', :action => "new", :id => @gallery_id}, class: "btn btn-block btn-success" %>
-      </div>
-    </div>
-  </div>
-
-<% end %>
+</div>

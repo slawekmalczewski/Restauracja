@@ -19,10 +19,12 @@ class GalleriesController < ApplicationController
   # GET /galleries/new
   def new
     @gallery = Gallery.new
+    @number_of_galleries = Gallery.all.count+1
   end
 
   # GET /galleries/1/edit
   def edit
+    @number_of_galleries = Gallery.all.count+1
   end
 
   # POST /galleries
