@@ -48,6 +48,7 @@ gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'gritter', '~> 1.2'
 gem 'lightbox2-rails'
+gem 'aws-sdk', '~> 3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

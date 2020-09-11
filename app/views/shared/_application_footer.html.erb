@@ -1,8 +1,8 @@
 <div class="mt-5 pt-5 pb-5 footer">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-5 col-xs-12 about-company">
-        <h4 class="mt-lg-0 mt-sm-3">Restauracja "Nad Motlawa"</h4>
+    <div class="row d-flex justify-content-between">
+      <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 mb-2">
+        <h4 class="">Restauracja "Nad Motlawa"</h4>
         <table class="table table-sm table-borderless">
           <tbody>
             <% WorkingHour.all.sort_by_day.each do |d| %>
@@ -19,20 +19,23 @@
             <% end %>
           </tbody>
         </table>
-
       </div>
-      <div class="col-lg-3 col-xs-12 links">
-        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
-          <ul class="m-0 p-0">
-            <li>- <%= link_to("Home", {:controller => 'pages', :action => 'home'}) %></li>
-            <li>- <%= link_to("Menu", {:controller => 'pages', :action => 'daymenu'}) %></li>
-            <li>- <%= link_to("Catering", {:controller => 'pages', :action => 'catering'}) %></li>
-            <li>- <%= link_to("O Nas", {:controller => 'pages', :action => 'about'}) %></li>
+
+      <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 links mb-2">
+        <div class="center_part" >
+          <h4>Links</h4>
+          <ul>
+            <li><%= link_to("Home", {:controller => 'pages', :action => 'home'}) %></li>
+            <li><%= link_to("Menu", {:controller => 'pages', :action => 'daymenu'}) %></li>
+            <li><%= link_to("Catering", {:controller => 'pages', :action => 'catering'}) %></li>
+            <li><%= link_to("O Nas", {:controller => 'pages', :action => 'about'}) %></li>
           </ul>
+
+        </div>
       </div>
 
-      <div class="col-lg-4 col-xs-12 location">
-        <h4 class="mt-lg-0 mt-sm-3">Kontakt</h4>
+      <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 location">
+        <h4 class="">Kontakt</h4>
 
         <table class="table table-sm table-borderless">
           <tbody>

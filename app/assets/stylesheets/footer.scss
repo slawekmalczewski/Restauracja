@@ -7,7 +7,7 @@
   width: 100%;
 
   .links{
-    ul {list-style-type: none;}
+    ul {list-style-type:square; list-style-position: inside; padding-left: 0;}
     li a{
       color: white;
       transition: color .2s;
@@ -29,4 +29,19 @@
     i{font-size: 18px;}
   }
   .copyright p{border-top:1px solid rgba(255,255,255,.1);}
+}
+
+@media (max-width:576px){
+  .center_part{
+    margin-left: 0px;
+    width:50%;
+  }
+}
+
+@media (min-width:800px){
+  .center_part{
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+  }
 }
