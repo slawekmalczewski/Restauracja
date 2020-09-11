@@ -16,13 +16,13 @@
 
 
           <!-- Zupy -->
-          <% if @menu.dishes.where(:dish_type => "Zupa").count > 0 %>
+          <% if @newest_catering_menu.dishes.where(:dish_type => "Zupa").count > 0 %>
             <div class="col-12 mt-4">
                 <h3 class="text-center">Zupy</h3>
                 <hr class="accent my-5">
             </div>
             <div class="card-columns">
-              <% @menu.dishes.where(:dish_type => "Zupa").each do |p| %>
+              <% @newest_catering_menu.dishes.where(:dish_type => "Zupa").each do |p| %>
                 <div class="card card-body">
                     <span class="float-right font-weight-bold"><%= style_price_display(p.price) %></span>
                     <h6 class="text-truncate"><%= p.name %> <span class="weight_and_unit"> (<%= p.weight %> <%= p.weight_unit %>) </span></h6>
@@ -33,13 +33,13 @@
           <% end %>
 
           <!-- Dania Glowne -->
-          <% if @menu.dishes.where(:dish_type => "Danie Glowne").count > 0 %>
+          <% if @newest_catering_menu.dishes.where(:dish_type => "Danie Glowne").count > 0 %>
             <div class="col-12 mt-4">
                 <h3 class="text-center">Dania główne</h3>
                 <hr class="accent my-5">
             </div>
             <div class="card-columns">
-              <% @menu.dishes.where(:dish_type => "Danie Glowne").each do |p| %>
+              <% @newest_catering_menu.dishes.where(:dish_type => "Danie Glowne").each do |p| %>
                 <div class="card card-body">
                     <span class="float-right font-weight-bold"><%= style_price_display(p.price) %></span>
                     <h6 class="text-truncate"><%= p.name %> <span class="weight_and_unit"> (<%= p.weight %> <%= p.weight_unit %>) </span></h6>
@@ -50,13 +50,13 @@
           <% end %>
 
           <!-- Dania na zimno -->
-          <% if @menu.dishes.where(:dish_type => "Danie na zimno").count > 0 %>
+          <% if @newest_catering_menu.dishes.where(:dish_type => "Danie na zimno").count > 0 %>
             <div class="col-12 mt-4">
                 <h3 class="text-center">Przystawki zimne</h3>
                 <hr class="accent my-5">
             </div>
             <div class="card-columns">
-              <% @menu.dishes.where(:dish_type => "Danie na zimno").each do |p| %>
+              <% @newest_catering_menu.dishes.where(:dish_type => "Danie na zimno").each do |p| %>
                 <div class="card card-body">
                     <span class="float-right font-weight-bold"><%= style_price_display(p.price) %></span>
                     <h6 class="text-truncate"><%= p.name %> <span class="weight_and_unit"> (<%= p.weight %> <%= p.weight_unit %>) </span></h6>
@@ -67,13 +67,13 @@
           <% end %>
 
           <!-- Dodatki -->
-          <% if @menu.dishes.where(:dish_type => "Dodatek").count > 0 %>
+          <% if @newest_catering_menu.dishes.where(:dish_type => "Dodatek").count > 0 %>
             <div class="col-12 mt-4">
                 <h3 class="text-center">Dodatki</h3>
                 <hr class="accent my-5">
             </div>
             <div class="card-columns">
-              <% @menu.dishes.where(:dish_type => "Dodatek").each do |p| %>
+              <% @newest_catering_menu.dishes.where(:dish_type => "Dodatek").each do |p| %>
                 <div class="card card-body">
                     <span class="float-right font-weight-bold"><%= style_price_display(p.price) %></span>
                     <h6 class="text-truncate"><%= p.name %> <span class="weight_and_unit"> (<%= p.weight %> <%= p.weight_unit %>) </span></h6>
@@ -84,13 +84,13 @@
           <% end %>
 
           <!-- Napoje -->
-          <% if @menu.dishes.where(:dish_type => "Napoje").count > 0 %>
+          <% if @newest_catering_menu.dishes.where(:dish_type => "Napoje").count > 0 %>
             <div class="col-12 mt-4">
                 <h3 class="text-center">Napoje</h3>
                 <hr class="accent my-5">
             </div>
             <div class="card-columns">
-              <% @menu.dishes.where(:dish_type => "Napoje").each do |p| %>
+              <% @newest_catering_menu.dishes.where(:dish_type => "Napoje").each do |p| %>
                 <div class="card card-body">
                     <span class="float-right font-weight-bold"><%= style_price_display(p.price) %></span>
                     <h6 class="text-truncate"><%= p.name %> <span class="weight_and_unit"> (<%= p.weight %> <%= p.weight_unit %>) </span></h6>

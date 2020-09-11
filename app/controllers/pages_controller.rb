@@ -21,7 +21,7 @@ class PagesController < ApplicationController
   end
 
   def catering
-    @menu = Menu.all.where(:catering_menu => true).order(created_at: :desc)[0]
+    @newest_catering_menu = Menu.all.where(:catering_menu => true).order(created_at: :desc)[0]
   end
 
 
