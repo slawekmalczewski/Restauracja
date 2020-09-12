@@ -30,7 +30,7 @@ class WorkingHour < ApplicationRecord
     if operating_flag == true
       answer = "Dzis restauracja jest nieczynna"
     else
-      answer = "Dzis jest #{what_day_is_today} #{day_today} jestemy otwarci od #{opening_time} do #{closing_time}"
+      answer = "Dziś jest #{what_day_is_today} #{day_today} jesteśmy otwarci od #{opening_time} do #{closing_time}"
     end
     answer
   end

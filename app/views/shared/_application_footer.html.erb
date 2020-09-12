@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row d-flex justify-content-between">
       <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 mb-2">
-        <h4 class="">Restauracja "Nad Motlawa"</h4>
+        <h4 class="">Restauracja "Nad Motławą"</h4>
         <table class="table table-sm table-borderless">
           <tbody>
             <% WorkingHour.all.sort_by_day.each do |d| %>
@@ -29,6 +29,7 @@
             <li><%= link_to("Menu", {:controller => 'pages', :action => 'daymenu'}) %></li>
             <li><%= link_to("Catering", {:controller => 'pages', :action => 'catering'}) %></li>
             <li><%= link_to("O Nas", {:controller => 'pages', :action => 'about'}) %></li>
+            <li><%= link_to("Galerie", {:controller => 'galleries', :action => 'index'}) %></li>
           </ul>
 
         </div>
@@ -42,7 +43,7 @@
 
             <tr style="color:white; font-size: 1em;">
               <td><a class="footer-links" href="https://goo.gl/maps/5fdEL1X94mkU8Cz98"><i class="fa fa-map"></i></a></td>
-              <td>83-022 Suchy Dab, ul.Gdanska 9</td>
+              <td>83-022 Suchy Dąb, ul.Gdańska 9</td>
             </tr>
 
             <tr style="color:white; font-size: 1em;">
@@ -68,7 +69,7 @@
     </div>
     <div class="row mt-5">
       <div class="col copyright">
-        <p class=""><small class="text-white-50">© Slawomir Malczewski / <%= DateTime.now.year %>. All Rights Reserved.</small></p>
+        <p><small class="text-white-50">© Projekt i wykonanie: Slawomir Malczewski / <%= DateTime.now.year %>. All Rights Reserved.</small></p>
       </div>
     </div>
   </div>

@@ -54,8 +54,6 @@ header .overlay {
 }
 
 .text-white{
-  font-size: 1em;
-  font-family: serif;
   color: white;
 }
 
@@ -71,6 +69,7 @@ header .overlay {
 .news-scroll a {
     text-decoration: none;
     color: black;
+    font-size: 1.25em;
 }
 
 .news-scroll a:hover {
@@ -98,6 +97,7 @@ header .overlay {
         line-height: 1.7;
         font-size: 16px;
 }
+
 .home-resturant-info {
         color: var(--gunmetal);
         font-weight: 600;
@@ -124,17 +124,10 @@ header .overlay {
 .home-services {
         background-color: #fafafa;
 }
-.home-service-title {
-        font-size: 17px;
-        font-weight: 700;
-        color: var(--vulcan);
-        margin: 15px 0 10px;
-}
-.home-service-info {
-        font-weight: 500;
-        color: var(--grayish);
-        font-size: 17px;
-        line-height: 1.5;
+
+.home-services-description{
+  padding: 10px;
+
 }
 /* Service Section CSS END */
 
@@ -154,7 +147,7 @@ hr.mystyle1{
 
 /* Menu JUMBOTRON element CSS START */
 .jumbotron_day_menu{
-  background-image: url("https://nadmotlawa.s3-eu-west-1.amazonaws.com/static-content/jumbotron_catering_menu.jpg");
+  background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),url("https://nadmotlawa.s3-eu-west-1.amazonaws.com/static-content/jumbotron_catering_menu.jpg");
   background-size: cover;
   color: white;
   height: 25rem;
@@ -164,12 +157,13 @@ hr.mystyle1{
 
 /* Catering JUMBOTRON element CSS START */
 .jumbotron_catering_menu{
-  background-image: url("https://nadmotlawa.s3-eu-west-1.amazonaws.com/static-content/jumbotron_day_menu.jpg");
+  background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),url("https://nadmotlawa.s3-eu-west-1.amazonaws.com/static-content/jumbotron_day_menu.jpg");
   background-size: cover;
   color: white;
   height: 25rem;
   max-height: 30rem;
 }
+
 /* Menu JUMBOTRON element CSS END */
 
 
@@ -483,4 +477,5 @@ p{
   background: #ffffff;
   border: 4px;
   box-shadow: 0 3px 6px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.15);
+  background-color: green;
 }
