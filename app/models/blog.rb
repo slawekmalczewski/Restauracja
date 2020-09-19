@@ -18,12 +18,7 @@ class Blog < ApplicationRecord
   end
 
   def self.najnowszy_opublikowany_artykul
-    x=Blog.where(:published => true).order(created_at: :asc).first    
+    x=Blog.where(:published => true).order(created_at: :asc).first
   end
 
 end
-
-
-number_of_photos_in_history_gallery = Gallery.where(:title => "Z naszej historii")[0].photos.count
-random_number=rand(0...number_of_photos_in_history_gallery)
-random_image_from_history = Gallery.where(:title => "Z naszej historii")[0].photos[random_number]
