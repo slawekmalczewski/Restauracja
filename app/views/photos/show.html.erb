@@ -1,4 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
 
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+    </div>
+    <div class="col-6">
+      <div class="card w-100">
+        <div class="card-img">
+          <%= image_tag(@photo.photo_file) %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= @photo.title %></h5>
+          <p class="card-text"><%= @photo.description %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Galeria: <%= @photo.gallery.title %></li>
+          <li class="list-group-item">Pozycja: <%= @photo.position %></li>
+          <li class="list-group-item">Opublikowane: <%= icon_published_or_not(@photo.published) %></li>
+          <li class="list-group-item">Nazwa Pliku: <%= @photo.photo_file.filename %></li>
+          <li class="list-group-item">Rozmiar Pliku: <%= bytes_to_megabytes(@photo.photo_file.byte_size) %> megabytes</li>
+          <li class="list-group-item">
+            <a href="#" class="card-link"><%= link_to 'Edit', :back, class: 'btn btn-block btn-danger' %></a>
+          </li>
+          <li class="list-group-item">
+            <a href="#" class="card-link"><%= link_to 'OK', {:controller => 'admins', :action => "index"}, class: 'btn btn-block btn-success' %></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-3">
+
+    </div>
+  </div>
+
+</div>

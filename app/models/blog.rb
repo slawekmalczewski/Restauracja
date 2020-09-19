@@ -17,4 +17,13 @@ class Blog < ApplicationRecord
     scheduled_ad_for_today = Blog.where("valid_from <= ? AND valid_to >= ? AND schedule_publish = ? OR published = ?", DateTime.now, DateTime.now, true, true).order(updated_at: :desc)
   end
 
+  def self.najnowszy_opublikowany_artykul
+    x=Blog.where(:published => true).order(created_at: :asc).first    
+  end
+
 end
+
+
+number_of_photos_in_history_gallery = Gallery.where(:title => "Z naszej historii")[0].photos.count
+random_number=rand(0...number_of_photos_in_history_gallery)
+random_image_from_history = Gallery.where(:title => "Z naszej historii")[0].photos[random_number]

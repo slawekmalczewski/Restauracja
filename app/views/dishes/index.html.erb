@@ -37,15 +37,15 @@
         <tbody>
           <% @dishes.each do |food| %>
           <tr>
-            <td class="col-md-2"><%= food.name %></td>
-            <td class="col-md-2"><%= food.description %></td>
-            <td class="col-md-1"><%= food.weight %></td>
-            <td class="col-md-1"><%= food.weight_unit %></td>
-            <td class="col-md-2"><%= food.dish_type %></td>
-            <td class="col-md-1"><%= food.price %></td>
-            <td class="col-md-1"><%= link_to 'Pokaz', food %></td>
-            <td class="col-md-1"><%= link_to 'Edytuj', edit_dish_path(food) %></td>
-            <td class="col-md-1"><%= link_to 'Usun', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="w-15"><%= food.name %></td>
+            <td class="w-20"><%= short_text(food.description) %></td>
+            <td class="w-10"><%= food.weight %></td>
+            <td class="w-10"><%= food.weight_unit %></td>
+            <td class="w-10"><%= food.dish_type %></td>
+            <td class="w-10"><%= food.price %></td>
+            <td class="w-5"><%= link_to 'Pokaz', food %></td>
+            <td class="w-5"><%= link_to 'Edytuj', edit_dish_path(food) %></td>
+            <td class="w-5"><%= link_to 'Usun', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
           <% end %>
         </tbody>

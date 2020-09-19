@@ -1,19 +1,17 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container-fluid">
 
   <div class="row">
     <div class="col-md-12">
-      <h1>Lista Zdjec</h1>
+      <h4>Lista Zdjec w galerii: <%= Gallery.where("id = ?", params[:id_gal])[0].title %></h4>
     </div>
   </div>
 
   <div class="row mb-4 mt-4">
     <div class="col-md-2">
-      <%= link_to 'Wstecz', {:controller => 'admins', :action => "index"}, class: 'btn btn-block btn-danger' %>
+      <%= link_to 'Wstecz', :back, class: 'btn btn-block btn-danger' %>
     </div>
     <div class="col-md-3">
-      <%= link_to 'Dodaj Zdjecie', new_photo_path, class: 'btn btn-block btn-info' %>
+      <%= link_to 'Dodaj Zdjecie', {:controller => 'photos', :action => "new", :id => params[:id_gal]} , class: 'btn btn-block btn-info' %>
     </div>
     <div class="col-md-3">
       <%= link_to("Admin Panel", {:controller => 'admins', :action => 'index'}, class: 'btn btn-block btn-warning') %>

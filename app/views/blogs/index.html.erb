@@ -36,10 +36,10 @@
         <tbody>
           <% @blogs.each do |blog| %>
             <tr>
-              <td class="col-md-2"><%= blog.title %></td>
-              <td class="col-md-2"><%= short_text(blog.body) %></td>
-              <td class="col-md-1"><%= icon_published_now_or_later(blog.published) %></td>
-              <td class="col-md-2">
+              <td class="w-25"><%= blog.title %></td>
+              <td class="w-30"><%= short_text(blog.body) %></td>
+              <td class="w-5"><%= icon_published_now_or_later(blog.published) %></td>
+              <td class="w-10">
                 <% if blog.published == true %>
                   <%= "<span class='small'>Opublikowane</span>".html_safe %>
                 <% elsif blog.not_publish == true %>
@@ -48,10 +48,10 @@
                   <%= "<span class='small'>Oglosznie tymczasowe <br/> od #{convert_time_to_readable(blog.valid_from)} <br/> do #{convert_time_to_readable(blog.valid_to)}</span>".html_safe %>
                 <% end %>
               </td>
-              <td class="col-md-1"><%= "<span class='small'> #{convert_time_to_readable(blog.created_at)} </span>".html_safe %></td>
-              <td class="col-md-1"><%= link_to 'Show', blog %></td>
-              <td class="col-md-1"><%= link_to 'Edit', edit_blog_path(blog) %></td>
-              <td class="col-md-1"><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td class="w-15"><%= "<span class='small'> #{convert_time_to_readable(blog.created_at)} </span>".html_safe %></td>
+              <td class="w-5"><%= link_to 'Show', blog %></td>
+              <td class="w-5"><%= link_to 'Edit', edit_blog_path(blog) %></td>
+              <td class="w-5"><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>

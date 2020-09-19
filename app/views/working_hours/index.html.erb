@@ -34,13 +34,13 @@
         <tbody>
           <% @working_hours.each do |working_hour| %>
           <tr>
-            <td class="col-md-3"><%= working_hour.day %></td>
-            <td class="col-md-1"><%= iconStatus(working_hour.operating) %></td>
-            <td class="col-md-2"><%= display_only_hour(working_hour.open_time)%></td>
-            <td class="col-md-2"><%= display_only_hour(working_hour.close_time) %></td>
-            <td class="col-md-1"><%= link_to 'Show', working_hour %></td>
-            <td class="col-md-1"><%= link_to 'Edit', edit_working_hour_path(working_hour) %></td>
-            <td class="col-md-1"><%= link_to 'Destroy', working_hour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="w-20"><%= working_hour.day %></td>
+            <td class="w-10"><%= iconStatus(working_hour.operating) %></td>
+            <td class="w-20"><%= display_only_hour(working_hour.open_time)%></td>
+            <td class="w-20"><%= display_only_hour(working_hour.close_time) %></td>
+            <td class="w-5"><%= link_to 'Show', working_hour %></td>
+            <td class="w-5"><%= link_to 'Edit', edit_working_hour_path(working_hour) %></td>
+            <td class="w-5"><%= link_to 'Destroy', working_hour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
           <% end %>
         </tbody>

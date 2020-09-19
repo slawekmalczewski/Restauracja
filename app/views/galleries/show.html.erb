@@ -1,5 +1,5 @@
 <% obrazek=url_for(@gallery.cover_image) %>
-<div class="jumbotron jumbotron-fluid gallery_jumbotron" style="background-image: url(<%= url_for(@gallery.cover_image) %>) ">
+<div class="jumbotron jumbotron-fluid gallery_jumbotron" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),url(<%= url_for(@gallery.cover_image) %>) ">
   <div class="container">
     <h1 class="display-4"><%= @gallery.title %></h1>
     <p class="lead"><%= @gallery.description.html_safe %></p>

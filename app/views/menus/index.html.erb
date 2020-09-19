@@ -35,8 +35,8 @@
         <tbody>
           <% @menus.each do |menu| %>
           <tr>
-            <td class="col-md-3"><%= menu.name %></td>
-            <td class="col-md-3">
+            <td class="w-20"><%= menu.name %></td>
+            <td class="w-20">
               <% if menu.default_menu == true %>
               <%= "Menu Domyslne"%>
               <% elsif menu.catering_menu == true %>
@@ -45,10 +45,10 @@
               <%= "Menu Tymczasowe" %><br/><span class="small"> <%= convert_time_to_readable(menu.start_date) %> -> <%= convert_time_to_readable(menu.end_date) %></span>
               <% end %>
             </td>
-            <td class="col-md-3"><%= convert_time_to_readable(menu.updated_at) %></td>
-            <td class="col-md-1"><%= link_to 'Pokaz', menu %></td>
-            <td class="col-md-1"><%= link_to 'Edytuj', edit_menu_path(menu) %></td>
-            <td class="col-md-1"><%= link_to 'Usun', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="w-20"><%= convert_time_to_readable(menu.updated_at) %></td>
+            <td class="w-5"><%= link_to 'Pokaz', menu %></td>
+            <td class="w-5"><%= link_to 'Edytuj', edit_menu_path(menu) %></td>
+            <td class="w-5"><%= link_to 'Usun', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
           <% end %>
         </tbody>
