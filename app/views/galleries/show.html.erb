@@ -12,8 +12,8 @@
 <% @photos.all.each_slice(3) do |photo_row| %>
   <div class="row justify-content-center">
     <% photo_row.each do |p| %>
-    <div class="col-md-3 p-2 m-3">
-      <div class="overlay-container d-flex justify-content-center m-auto" data-overlay-text="<%= p.title %>">
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-3">
+      <div class="overlay-container d-flex justify-content-center m-auto">
         <%= link_to image_tag(p.photo_file.variant(combine_options: {resize: '300^x300', gravity: 'center', extent: '300x300'}).processed, :class => "img-responsive gallery_image"), p.photo_file, data: {lightbox: 'roadtrip', title: p.title+p.description} %>
       </div>
     </div>

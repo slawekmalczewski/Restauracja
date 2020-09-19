@@ -6,13 +6,13 @@
   <% @galleries.all.each_slice(3) do |photo_gallery| %>
   <div class="row justify-content-center">
     <% photo_gallery.each do |p| %>
-    <div class="col-md-3 p-2 m-3">
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-3">
       <div class="overlay-container d-flex justify-content-center m-auto">
         <%= link_to image_tag(p.cover_image.variant(combine_options: {resize: '300^x300', gravity: 'center', extent: '300x300'}).processed, :class => "img-responsive gallery_image"), gallery_path(p), :"data-turbolinks" => false %>
-        <div class="gallery_info_tile">
-          <div class="gallery_info_text"><%= p.title %></div>
+          <div class="gallery_info_tile">
+            <div class="gallery_info_text"><%= p.title %></div>
+          </div>
         </div>
-      </div>
     </div>
     <% end %>
   </div>
