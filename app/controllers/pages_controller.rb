@@ -9,6 +9,8 @@ class PagesController < ApplicationController
   end
 
   def about
+    @weather = WeatherService.getCurrentWeather("54.203,18.767")
+    @weatherForecast = WeatherService.getWeatherForecast("54.203,18.767")
   end
 
   def contact

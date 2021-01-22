@@ -72,29 +72,53 @@
             Niech te ponad <%= calculate_number_of_years() %> lat naszej nieprzerwanej działalności będzie naszą najlepszą rekomendacją … <br/>
             Serdecznie zapraszamy i życzymy smacznego !
         </div>
+
         <div class="collumn">
-            <div class="head"><span class="headline hl5">Give people courage</span><p><span class="headline hl6">The crowd seemed to grow</span></p></div>
-            <p>The sunset faded to twilight before anything further happened.  The crowd far away on the left, towards Woking, seemed to grow, and I heard now a faint murmur from it.  The little knot of people towards Chobham dispersed.  There was scarcely an intimation of movement from the pit.</p>
-			<figure class="figure">
+          <div class="head"><span class="headline hl3">O Gminie Suchy Dąb </span><p><span class="headline hl4">Zulawy Gdanskie</span></p></div><p>Gmina Suchy Dąb całkowicie usytuowana na Żuławach Gdańskich tak jak każdy region ma swoją własną specyfikę, nie ma chyba jednak w Polsce krainy tak niezwykłej i osobliwej jak Żuławy – wielka depresyjna równina, w delcie Wisły, królowej spośród polskich rzek, która w tak cudowny sposób ujmuje swoim pięknem i bogactwem będącym swoistym owocem ciężkich zmagań człowieka z przyrodą.
+
+          Już w XIII wieku rozpoczęto tutaj prace melioracyjne, które zmieniły ten zalewowy obszar w najżyźniejszy region Polski, zwany niekiedy Małą Holandią. Przez wiele wieków była to ziemia ludzi pracowitych i bogatych, którzy pozostawili po sobie szereg interesujących zabytków kultury materialnej. Żuławy Gdańskie to znakomite miejsce zarówno do uprawiania turystyki rowerowej jak i wodnej, ale także znakomite miejsce na wypoczynek połączony z lekcją historii.
+
+          Przez obszar naszej gminy przebiegają trzy szlaki, dwa szlaki rowerowe (szlak domów podcieniowych; szlak motławski) i jeden szlak wodny (szlak motławski). </p>
+        </div>
+
+        <div class="collumn">
+          <div class="head"><span class="headline hl5">Lokalna Pogoda</span><p><span class="headline hl6">Pogoda w Suchym Debie</span></p></div>
+
+            <%= image_tag(@weather["wx_icon"]) %> <%= @weather["wx_desc"] %>
+            Temperatura: <%= @weather["temp_c"] %> &#176C<br/>
+            Temperatura Odczuwalna: <%= @weather["feelslike_c"] %> &#176C<br/>
+            Wiatr: <%= @weather["windspd_kmh"] %> kmh, <%= @weather["winddir_compass"] %><br/>
+            Niebo zachmurzone w <%= @weather["cloudtotal_pct"] %>%<br/>
+            Wilgotnosc: <%= @weather["humid_pct"] %>%<br/>
+            <hr>
+            Slonce wzeszlo dzis o <%= @weatherForecast[:wschod_slonca] %> i zajdzie o godzinie <%= @weatherForecast[:zachod_slonca] %>.<br/>
+            Przewidywana maksymalna temperatura: <%= @weatherForecast[:temp_max] %> &#176C, z kolei minimalna temperatura to: <%= @weatherForecast[:temp_min] %> &#176C. <br/>
+            Przewidywana ilosc opadow: <%= @weatherForecast[:opad] %> [mm].
+
+
+            <!-- <div class="head"><span class="headline hl1">Kuchnia polska</span><p><span class="headline hl6">Wpływ na polską kuchnię, przez wieki miały najróżniejsze grupy narodowościowe zamieszkujące nasz kraj. </span></p></div>
+            <p>Wpływ na polską kuchnię, przez wieki miały najróżniejsze grupy narodowościowe zamieszkujące nasz kraj. W kuchni polskiej możemy dostrzec pierwiastek kuchni niemieckiej, ruskiej, tatarskiej czy żydowskiej. Dodatkowy wpływ na kształtowanie się polskiej kuchni regionalnej miała dostępność poszczególnych produktów, obecność ludności o odmiennej kulturze a także zamożność Polaków zamieszkujących dany region. Swój wkład w polską kuchnię miał również okres zaborów.</p>
+			      <figure class="figure">
 								<img class="media" src="http://i.giphy.com/13LlAxmDwAkopO.gif" alt="">
 								<figcaption class="figcaption">Nie ufaj chudemu kucharzowi</figcaption>
 						</figure>
-            <p>It was this, as much as anything, that gave people courage, and I suppose the new arrivals from Woking also helped to restore confidence.  At any rate, as the dusk came on a slow, intermittent movement upon the sand pits began, a movement that seemed to gather force as the stillness of the evening about the cylinder remained unbroken.  Vertical black figures in twos and threes would advance, stop, watch, and advance again, spreading out as they did so in a thin irregular crescent that promised to enclose the pit in its attenuated horns.  I, too, on my side began to move towards the pit.</p>
+            <p>Rownież wszelakie przemiany historyczne miały duzy wpływ na kształtowanie się swoistych cech kuchni polskiej. Na przestrzeni dziejów kuchnia polska ulegała wpływom i zmianom regionalnym, zwłaszcza że tereny Rzeczypospolitej Polskiej historycznie zamieszkiwała zmieniająca się mozaika narodów. W efekcie silne są kulinarne wpływy wschodnie (tatarsko-tureckie, wcześniej mongolskie), rusińskie, niemieckie, francuskie, włoskie i żydowskie.</p>
 
-            <p>Then I saw some cabmen and others had walked boldly into the sand pits, and heard the clatter of hoofs and the gride of wheels.  I saw a lad trundling off the barrow of apples.  And then, within thirty yards of the pit, advancing from the direction of Horsell, I noted a little black knot of men, the foremost of whom was waving a white flag.</p>
+            <p>Najpopularniejsze polskie potrawy to m.in.: pierogi, kasza, kluski, gołąbki, kotlet schabowy, kotlet mielony, bigos, galareta mięsna, golonka, zupy (żurek, kapuśniak, krupnik, barszcz czerwony, rosół, zupa pomidorowa, zupa ogórkowa, zupa grzybowa, zupa grochowa, chłodnik), potrawy z kapusty i ziemniaków, pieczywo (chleb żytni, pszenny), ciasta, ser biały, jak i wszelkiego rodzaju mięsa (głównie wieprzowina, drób i wołowina) rozmaicie przygotowane, oraz w mniejszym stopniu ryby morskie i słodkowodne. Specyficznym polskim deserem są faworki, popularne są też inne wypieki, w tym babka, makowiec, sernik, pierniki czy pączki.
+            Do bardzo specyficznych potraw i napojów należą flaki, ogórki kiszone, kapusta kiszona, zsiadłe mleko, maślanka, kefir. </p> -->
 
-            </div>
+        </div>
+
         <div class="collumn"><div class="head"><span class="headline hl1">Pierogi</span><p><span class="headline hl2">Skąd się wzięły w Polsce  pierogi?</span></p></div><p>Legenda głosi, że św. Jacek Odrowąż przywiózł je z Kijowa. Był zachwycony ich smakiem, poznał je podczas swoich podróży misyjnych w XIII wieku po Rusi, dzisiejszej Ukrainie.</p>
-	<figure class="figure">
+	          <figure class="figure">
 								<img class="media" src="http://i.giphy.com/xT1R9YKgiFDSpEyxBS.gif" alt="">
 								<figcaption class="figcaption">"Nasze pierogi sa najlepsze"</figcaption>
 						</figure>
-            <p>Stąd też wzięła się nazwa – pierogi ruskie. Wprawdzie wtedy jeszcze w Europie nie znano ziemniaków, więc pewnie były z innym nadzieniem np. z serem, kaszą, kapustą, owocami … Kult św. Jacka jest rozpowszechniony na wielu kontynentach i w wielu krajach, ale tylko w Polsce jest on św. Jackiem z Pierogami.Pierogi podaje się na gorąco z wody albo podsmażane, w zależności od nadzienia. Polane skwarkami, podsmażoną cebulką, roztopionym masłem, śmietaną, miodem, musem owocowym… Pierogi najlepiej popijać Kwasem Chlebowym, albo piwem, ale tylko jasnym, polecamy Obolom Pszeniczny.</p></div>
-        <div class="collumn"><div class="head"><span class="headline hl3">O Gminie Suchy Dąb </span><p><span class="headline hl4">Zulawy Gdanskie</span></p></div><p>Gmina Suchy Dąb całkowicie usytuowana na Żuławach Gdańskich tak jak każdy region ma swoją własną specyfikę, nie ma chyba jednak w Polsce krainy tak niezwykłej i osobliwej jak Żuławy – wielka depresyjna równina, w delcie Wisły, królowej spośród polskich rzek, która w tak cudowny sposób ujmuje swoim pięknem i bogactwem będącym swoistym owocem ciężkich zmagań człowieka z przyrodą.
+            <p>Stąd też wzięła się nazwa – pierogi ruskie. Wprawdzie wtedy jeszcze w Europie nie znano ziemniaków, więc pewnie były z innym nadzieniem np. z serem, kaszą, kapustą, owocami … Kult św. Jacka jest rozpowszechniony na wielu kontynentach i w wielu krajach, ale tylko w Polsce jest on św. Jackiem z Pierogami.Pierogi podaje się na gorąco z wody albo podsmażane, w zależności od nadzienia. Polane skwarkami, podsmażoną cebulką, roztopionym masłem, śmietaną, miodem, musem owocowym… Pierogi najlepiej popijać Kwasem Chlebowym, albo piwem, ale tylko jasnym, polecamy Obolom Pszeniczny.</p>
+        </div>
 
-        Już w XIII wieku rozpoczęto tutaj prace melioracyjne, które zmieniły ten zalewowy obszar w najżyźniejszy region Polski, zwany niekiedy Małą Holandią. Przez wiele wieków była to ziemia ludzi pracowitych i bogatych, którzy pozostawili po sobie szereg interesujących zabytków kultury materialnej. Żuławy Gdańskie to znakomite miejsce zarówno do uprawiania turystyki rowerowej jak i wodnej, ale także znakomite miejsce na wypoczynek połączony z lekcją historii.
 
-        Przez obszar naszej gminy przebiegają trzy szlaki, dwa szlaki rowerowe (szlak domów podcieniowych; szlak motławski) i jeden szlak wodny (szlak motławski). </p></div>
+
     </div>
 </div>
 
